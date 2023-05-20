@@ -192,7 +192,7 @@ about or are affected by the
 project.
 
 <p align="center">
-  <img src="../!img/stakeholder_analysis_matrix.png" />
+  <img src="../!assets/stakeholder_analysis_matrix.png" />
 </p>
 
 **Benefits of the matrix**

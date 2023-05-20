@@ -52,7 +52,7 @@ print("Hello, World!")
 
 ![alt text](https://www.markdownguide.org/assets/images/tux.png)
 
-URL: ../!img/image_name.png
+URL: ../!assets/image_name.png
 
 For control over alignment, use the following instead:
 <p align="center">
