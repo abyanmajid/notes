@@ -1,4 +1,7 @@
 # <strong>ITGS Paper 3 Case Study Notes (May 2023)</strong>
+*Date written: May 18, 2023* \
+*By: Abyan Majid*
+
 ## Table of Contents
 1. [Summary of Case Study](#summary-of-case-study)
 2. [Augmented Reality Mirror](#augmented-reality-mirror)
@@ -233,3 +236,5 @@ https://www.arayasolutions.com/virtual-dressing-mirror/
 https://www.indeed.com/career-advice/career-development/stakeholder-matrix
     - One of Charles E. Lindblom, Ian I. Mitroff, and R. Edward Freeman (notable
 figures in stakeholder theory research)
+
+$y=x^2$

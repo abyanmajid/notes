@@ -1,0 +1,14 @@
+# AoK Math: Is math invented or discovered?
+
+*Date written: Dec 11, 2021* \
+*By: Abyan Majid*
+
+One component of an AoK Math assignment we received in class was to view Jeff Dekofsky’s Ted-ED Video that explores whether mathematics is invented or discovered (https://www.youtube.com/watch?v=X_xR5Kes4Rs&ab_channel=TED-Ed).
+
+Metaphorically speaking, the video presented a series of animated graphics illustrating the advancement of humanity's comprehension of omathematics throughout history (or rather the development of mathematical inventions). It showcased the diverse ideas and perspectives put forth by numerous mathematicians and philosophers over time regarding the nature of mathematics. For instance, the Ancient Pythagoreans postulated that all living entities were fundamentally mathematical numbers, while the Greek Mathematician, Euclid, argued that nature itself manifested through mathematical laws. This pattern of events repeats throughout history, with new discoveries often superseding previously accepted ideas proposed by other mathematicians. Ultimately, this process leads us to the overarching question of whether mathematics is a human invention or discovery, a universal truth or an artificial construct.
+
+Contemplating whether mathematics is a human invention or not, I eventually reached a critical juncture that made me ponder, "If mathematics is a human invention, how do we explain our detection and recognition of mathematical patterns in various aspects of nature?". Conversely, if mathematics is a natural discovery, does it imply that every human possesses innate mathematical knowledge? ... Personally, I find it difficult to endorse such notions. Therefore, I personally arrived at the conclusion that mathematical patterns are a natural discovery, but humanity would not have become aware of mathematics without inventing it as a language comprising numbers and symbols to aid in comprehending these natural patterns.
+
+The video sparked my curiosity about the multitude of natural patterns and whether the language of mathematics can describe and solve the logic behind all of them. I am aware that geometric mathematical concepts are applied to understand spirals in pinecones or the wave properties of sound. Additionally, it led me to contemplate the ongoing development of mathematics and how close we have come to the truth, or whether mathematics ultimately fails as a universal truth.
+
+It is indeed challenging to ascertain, isn't it? Thus far, my perception of this universe leads me to believe that universal truth does not exist. Perhaps, none of the conjectures put forth by me or any mathematician or great thinker from the past hold true. However, one thing I am certain of is that mathematics was invented by humanity to strive towards a retrospective purpose similar to what science was given upon its inception. Mathematics serves as an endeavor to comprehend this exceedingly perplexing universe.
