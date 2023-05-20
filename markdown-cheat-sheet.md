@@ -84,10 +84,11 @@ X<sub>2</sub>
 
 X<sup>2</sup>
 
-### Equation
-$
-y=x
-$
+### In-line Equation
+$y=x$
+
+### Equation block
+$$y=x$$
 
 KATEX DOC FOR MATH: https://katex.org/docs/supported.html
 

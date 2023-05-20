@@ -1,1 +1,3 @@
-## hi, this repository lists all of my study notes, most of which are products of active recall :)
+# study-notes
+
+### hi, this repository lists all of my study notes, most of which are products of active recall :)
