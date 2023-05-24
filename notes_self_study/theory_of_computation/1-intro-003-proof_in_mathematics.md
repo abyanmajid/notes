@@ -57,7 +57,7 @@ Proof by induction is a method used to show that all elements of an infinite set
 - **Basis:** (also known as *base case*) A proof that a statement holds true for a particular value or set of values.
 - **Induction step:** A proof that if the statement holds true for the value(s) as tackled in the basis, it must also hold true for the next value, and then every other value in the set.
 
-To illustrate, let $P$ denote a property in a given set, say the set of natural numbers $\N=\{1,2,3,...\}$, and *i* be its index in the set. Hence, the basis and induction step could be:
+To illustrate, let $P$ denote a property in a given set, say the set of natural numbers $N=\{1,2,3,...\}$, and *i* be its index in the set. Hence, the basis and induction step could be:
 
 - **Basis:** Proves that $P(1)$ is true
 - **Induction step:** Proves that if $P(1)$ is true, and assuming that $P(i)$ is true, then for every $i>1$, $P(i+1)$ is also true.
@@ -72,6 +72,6 @@ In the induction step, the assumption that $P(i)$ is true is called the *inducti
 **Induction hypothesis:** Assume that the equation is true for a positive integer $k$, such that $1+2+3+...+k=\frac{k(k+1)}{2}$ is true.
 
 **Induction step:**
-1. Adding $(k+1)$ to both sides of the equation gives $1+2+3+...+k+(k+1)=\frac{k(k+1)}{2}+(k+1)\rArr 1+2+3+...+k+(k+1)=\frac{(k+1)(k+2)}{2}$
+1. Adding $(k+1)$ to both sides of the equation gives $1+2+3+...+k+(k+1)=\frac{k(k+1)}{2}+(k+1)$, which simplifies to $1+2+3+...+k+(k+1)=\frac{(k+1)(k+2)}{2}$.
 2. Therefore, the equation is true for $n=k+1$, and is true for all positive integers $n$.
 3. Therefore, the theorem is correct.
