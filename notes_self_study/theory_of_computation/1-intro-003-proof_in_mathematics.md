@@ -11,7 +11,7 @@
     - [Proof by Contradiction](#proof-by-contradiction)
       - [Example of Proof by Contradiction](#example-of-proof-by-contradiction)
     - [Proof by Induction](#proof-by-induction)
-
+      - [Example of Proof by Induction](#example-of-proof-by-induction)
 
 ## Basic terminology and overview
 - **Defintion:** A definition is a description of a certain object or concept. Defitions are used to derive mathematical statements, therefore it is imperative that definitions are clear, because otherwise, there will be trouble in communicating the statements to the readers. For instance, the following is an example of an improper and proper definition of a sample function $D(t)$:
@@ -52,14 +52,26 @@ Another way to prove a theorem is by assuming that the theorem is false, and the
 6. Hence, the assumption that $\sqrt 2$ is a rational number must be false. Therefore, $\sqrt 2$ is an irrational number.
 
 ### Proof by Induction
-Proof by induction is a method used to show that all elements of an infinite set have a certain property. A proof of induction is divided into two proofs, the *basis* and the *inductive step*, where:
+Proof by induction is a method used to show that all elements of an infinite set have a certain property. A proof of induction is divided into two proofs, the *basis* and the *induction step*, where:
 
 - **Basis:** (also known as *base case*) A proof that a statement holds true for a particular value or set of values.
-- **Inductive step:** A proof that if the statement holds true for the value(s) as tackled in the basis, it must also hold true for the next value, and then every other value in the set.
+- **Induction step:** A proof that if the statement holds true for the value(s) as tackled in the basis, it must also hold true for the next value, and then every other value in the set.
 
-To illustrate, let $P$ denote a property in a given set and *i* be its index in the set. Hence, the basis and inductive step could be:
+To illustrate, let $P$ denote a property in a given set, say the set of natural numbers $\N=\{1,2,3,...\}$, and *i* be its index in the set. Hence, the basis and induction step could be:
 
 - **Basis:** Proves that $P(1)$ is true
-- **Inductive step:** Proves that if $P(1)$ is true, and assuming that $P(i)$ is true, then for every $i\geq1$, $P(i+1)$ is also true.
+- **Induction step:** Proves that if $P(1)$ is true, and assuming that $P(i)$ is true, then for every $i>1$, $P(i+1)$ is also true.
 
-In the inductive step, the assumption that $P(i)$ is true is called the inductive hypothesis.
+In the induction step, the assumption that $P(i)$ is true is called the *induction hypothesis*.
+
+#### Example of Proof by Induction
+**Theorem:** For all positive integers $n$, the sum of the first $n$ positive integers is given by the formula $1+2+3+...+n=\frac{n(n+1)}{2}$.
+
+**Basis:** The equation is true for $n=1$, because $1=\frac{1(1+1)}{2}$
+
+**Induction hypothesis:** Assume that the equation is true for a positive integer $k$, such that $1+2+3+...+k=\frac{k(k+1)}{2}$ is true.
+
+**Induction step:**
+1. Adding $(k+1)$ to both sides of the equation gives $1+2+3+...+k+(k+1)=\frac{k(k+1)}{2}+(k+1)\rArr 1+2+3+...+k+(k+1)=\frac{(k+1)(k+2)}{2}$
+2. Therefore, the equation is true for $n=k+1$, and is true for all positive integers $n$.
+3. Therefore, the theorem is correct.
