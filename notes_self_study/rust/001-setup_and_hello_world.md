@@ -1,3 +1,16 @@
+# Rust Setup and Hello, World!
+
+- [Rust Setup and Hello, World!](#rust-setup-and-hello-world)
+  - [Installation](#installation)
+    - [Updating rust](#updating-rust)
+    - [Uninstalling rust](#uninstalling-rust)
+    - [Creating a new rust project](#creating-a-new-rust-project)
+    - [Comments in rust](#comments-in-rust)
+    - [Indentation in rust](#indentation-in-rust)
+  - [Hello, World! Program](#hello-world-program)
+    - [Without cargo](#without-cargo)
+    - [Anatomy of a Rust Program](#anatomy-of-a-rust-program)
+
 ## Installation
 
 For Windows:
