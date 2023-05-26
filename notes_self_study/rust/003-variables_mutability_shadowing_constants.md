@@ -7,6 +7,7 @@
   - [Variables](#variables)
   - [Mutability vs. Shadowing](#mutability-vs-shadowing)
     - [Mutability](#mutability)
+      - [Why variables are immutable by default (Benefits):](#why-variables-are-immutable-by-default-benefits)
     - [Shadowing](#shadowing)
   - [Constants](#constants)
 
@@ -32,6 +33,11 @@ let mut x = 5; // initializes a mutable variable 'x' with an initial value of 5.
 x = 10; // changes the value of 'x' to 10.
 ```
 Mutable variables allow you to change their values whenever after assignment.
+
+#### Why variables are immutable by default (Benefits):
+- **Safety** - value of an immutable variable cannot be changed by mistake, therefore helping prevent bugs related to unintended modifications.
+- **Concurrency** - greatly achieves thread safety and data integrity in concurrent systems, such that immutable variables can be safely shared among multiple threads without the need for lock or synchronization mechanisms since they cannot be modified after assignment.
+- **Compiler optimization** - allows the compiler to make better assumptions about the code, so as to optimize memory usage and generate more efficient machine code.
 
 ### Shadowing
 Rust allows you to declare a new variable with the same name as the previous one - allowing you to reassign a new value and type, effectively "shadowing" or hiding the previous variable as shown below.
