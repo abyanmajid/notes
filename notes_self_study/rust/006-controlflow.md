@@ -1,4 +1,22 @@
 # Control Flow
+
+*Date written: May 28, 2023* \
+*By: Abyan Majid*
+
+- [Control Flow](#control-flow)
+  - [Conditional expressions](#conditional-expressions)
+    - [`if` expressions](#if-expressions)
+      - [Syntax](#syntax)
+    - [`else if` expressions](#else-if-expressions)
+      - [Syntax](#syntax-1)
+  - [Loops](#loops)
+    - [`for` loop](#for-loop)
+    - [Syntax](#syntax-2)
+    - [`while` loop](#while-loop)
+      - [Syntax](#syntax-3)
+    - [`loop` loop](#loop-loop)
+      - [Syntax](#syntax-4)
+
 The two types of common control flow constructs that is used to decide when some block of code should run are:
 - conditional expressions, which include `if` and `else if`
 - loops, which include `while`, `for`, and `loop`
@@ -96,7 +114,7 @@ In short, the `while` keyword declares a white loop that repeats as long as the 
 ### `loop` loop
 In Rust, `loop` is a loop that repeats a code indefinitely until the program is terminated. It is the equivalent of an unconditional, in other words infinite `while` loop.
 
-### Syntax
+#### Syntax
 ```rust
 fn main() {
     loop {
