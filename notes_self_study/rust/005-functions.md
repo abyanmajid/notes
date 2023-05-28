@@ -1,6 +1,6 @@
 # Functions
 
-A *function* is a block of code that does a certain task(s) and is reusable or callable in other parts of the programme.
+A *function* is a block of code that does a certain task(s) and is reusable or callable in other parts of the program.
 
 ## Syntax
 The syntax of a function in Rust is as shown below.
