@@ -16,6 +16,7 @@
       - [Accessing values in a tuple; indexing](#accessing-values-in-a-tuple-indexing)
     - [Arrays](#arrays)
       - [Accessing a value in an array; indexing](#accessing-a-value-in-an-array-indexing)
+  - [Implicit type conversions](#implicit-type-conversions)
 
 ## Quick overview of data types
 
@@ -57,6 +58,8 @@ Rust's default integer type is `u32` which is generally the fastest, even on 64-
 A *floating-point* number is a number with a decimal point(s). In Rust, a floating-point type is written as `f32` or `f64`, which are respectively 32 and 64-bits long in size.
 
 Rust's default is `f64` because it is capable of greater precision than `f32`.
+
+
 
 ### Booleans
 A boolean type accepts two values: `true` and `false`, and is annotated as `bool`.
@@ -122,5 +125,26 @@ fn main() {
     let a = ["John", "Melvin", "Elizabeth", "Valentin"];
     let person_1 = a[0];
     let person_2 = a[1];
+}
+```
+
+## Implicit type conversions
+Rust may implicitly convert a type to another depending on the compatibility of the two types. Below are possible implicit type conversions in Rust
+- ***Numeric literals*** - Numeric literals can be implicitly converted to different numeric types based on the context. For instance, `42` can be implicitly converted to `i32`, `u32`, `f32`, etc.
+```rust
+fn main() {
+    let x: i32 = 42; // Implicit conversion of the numeric literal to i32
+    let y: f64 = 3.14; // Implicit conversion of the numeric literal to f64
+}
+```
+- ***Reference coercion*** - Rust provides automatic reference coercion when borrowing values. For instance, if you have a function that expects a `&str` argument, you can pass a `String` as an argument, and Rust will implicitly coerce the `String` to a `&str` by taking a reference to the content of the `String`.
+```rust
+fn print_string(s: &str) {
+    println!("{}", s);
+}
+
+fn main() {
+    let my_string = String::from("Hi");
+    print_string(&my_string); // Pass a reference to the String as &str
 }
 ```
