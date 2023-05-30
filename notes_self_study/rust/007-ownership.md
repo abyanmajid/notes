@@ -143,7 +143,7 @@ This rule ensures that when the program has executed all lines of code that invo
 
 Now, values will likely be stored in one of two regions of memory: (1) the stack, or (2) the heap.
 
-To understand more about memory allocation on the stack and heap, feel free to read: ***operating_systems/stack_and_heap_memory_management.md.***
+To understand more about memory allocation on the stack and heap, feel free to read: <a href="https://github.com/abyanmajid/study-notes/blob/main/notes_self_study/operating_systems/stack_and_heap_memory_management.md">***operating_systems/stack_and_heap_memory_management.md.***</a>
 
 Anyhow, the important thing to note about these two regions of memory - when trying to understand Rust's third ownership rule - is that values allocated on the stack will automatically be deallocated, meanwhile values allocated on the heap require explicit deallocation.
 
