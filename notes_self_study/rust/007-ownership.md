@@ -3,6 +3,18 @@
 *Date written: May 29, 2023* \
 *By: Abyan Majid*
 
+- [Ownership](#ownership)
+  - [Ownership rules](#ownership-rules)
+  - [Background on other memory management methods](#background-on-other-memory-management-methods)
+    - [Inefficiency of a garbage collector](#inefficiency-of-a-garbage-collector)
+    - [Inefficiency of explicit (de)allocation](#inefficiency-of-explicit-deallocation)
+  - [How Rust's ownership rules ensure memory safety](#how-rusts-ownership-rules-ensure-memory-safety)
+    - [1. Each value in Rust has a variable that is called its *owner*](#1-each-value-in-rust-has-a-variable-that-is-called-its-owner)
+    - [2. There can only be *one* owner at a time](#2-there-can-only-be-one-owner-at-a-time)
+    - [3. When the owner *goes out of scope*, the value will be *dropped*.](#3-when-the-owner-goes-out-of-scope-the-value-will-be-dropped)
+      - [Stack deallocation](#stack-deallocation)
+      - [Heap deallocation](#heap-deallocation)
+
 ## Ownership rules
 
 ***Ownership*** is a central feature to Rust and perhaps the biggest thing that makes Rust unique. The purpose of the ***ownership*** feature is to ensure memory safety through enforcement of ownership rules during compile-time, which are as follows:
