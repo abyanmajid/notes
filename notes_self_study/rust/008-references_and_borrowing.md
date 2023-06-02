@@ -118,4 +118,4 @@ error[E0106]: missing lifetime specifier
   = help: this function's return type contains a borrowed value, but there is no value for it to be borrowed from
 
 ```
-This prevents the human error of *accidently* making dangling references. Better safe than sorry!           
+This prevents the human error of *accidently* making dangling references. Better safe than sorry!
