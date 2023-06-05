@@ -8,6 +8,7 @@
   - [Assinging a variant to a variable](#assinging-a-variant-to-a-variable)
   - [The `Option` enum](#the-option-enum)
     - [Panic due to use of the `Option` enum](#panic-due-to-use-of-the-option-enum)
+    - [Pattern matching](#pattern-matching)
 
 ***Enums***, short for *enumerations*, in Rust is a feature that allows you to define a type by listing its possible values. ***Enums*** may seem similar to ***structs***, but they are not. 
 
@@ -87,7 +88,8 @@ thread 'main' panicked at 'called `Option::unwrap()` on a `None` value', src/mai
 note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 ```
 
-**Pattern Matching —** Rust promotes a safer approach to handling optional values using pattern matching, in order to avoid errors like these. Specifically, there are two additional control flow operators you can use for pattern matching in rust, which are:
+### Pattern matching
+Rust promotes a safer approach to handling optional values using pattern matching, in order to avoid errors like these. Specifically, there are two additional control flow operators you can use for pattern matching in rust, which are:
 - `match`
 - `if let`
 
