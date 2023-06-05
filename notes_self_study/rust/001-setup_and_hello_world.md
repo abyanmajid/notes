@@ -9,7 +9,6 @@
     - [Indentation in rust](#indentation-in-rust)
   - [Hello, World! Program](#hello-world-program)
     - [Without cargo](#without-cargo)
-    - [Anatomy of a Rust Program](#anatomy-of-a-rust-program)
 
 ## Installation
 
@@ -102,20 +101,3 @@ $ rustc main.rs
 $ .\main.exe
 >> Hello, World!
 ```
-
-Read the next section “Anatomy of a Rust Program” to review what goes under the hood
-
-### Anatomy of a Rust Program
-
-In the following code:
-
-```rust
-fn main() {
-    println!("Hello, World!");
-}
-```
-
-- ***fn*** declares a function
-- ***()*** is where you would usually insert parameters. The function has no parameters if there is nothing inside ***()***.
-- ***{}*** defines the start and end of the function body. It is conventional to write the opening curly bracket ***{*** in the same line as the function declaration ***fn*** and spaced apart from the ***()*** by 1.
-- ***!*** denotes that a macro is being called instead of a normal function
