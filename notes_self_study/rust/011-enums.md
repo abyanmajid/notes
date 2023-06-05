@@ -87,8 +87,8 @@ thread 'main' panicked at 'called `Option::unwrap()` on a `None` value', src/mai
 note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 ```
 
-**Pattern Matching —** Rust promotes a safer approach to handling optional values using pattern matching, in order to avoid errors like these. Specifically, there are two operators you can use for pattern matching in rust, which are:
+**Pattern Matching —** Rust promotes a safer approach to handling optional values using pattern matching, in order to avoid errors like these. Specifically, there are two additional control flow operators you can use for pattern matching in rust, which are:
 - `match`
 - `if let`
 
-I will explain pattern matching using these operators in <a href="https://github.com/abyanmajid/study-notes/blob/main/notes_self_study/rust/012-match_and_if_let.md">***012-match_and_if_let.md***</a>
+I will explain pattern matching using these control flow operators in <a href="https://github.com/abyanmajid/study-notes/blob/main/notes_self_study/rust/012-match_and_if_let_control_flow_operators.md">***012-match_and_if_let_control_flow_operators.md***</a>
