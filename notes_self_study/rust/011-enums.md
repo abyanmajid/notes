@@ -3,6 +3,12 @@
 *Date written: May 30, 2023* \
 *By: Abyan Majid*
 
+- [Enums](#enums)
+  - [Defining an Enum](#defining-an-enum)
+  - [Assinging a variant to a variable](#assinging-a-variant-to-a-variable)
+  - [The `Option` enum](#the-option-enum)
+    - [Panic due to use of the `Option` enum](#panic-due-to-use-of-the-option-enum)
+
 ***Enums***, short for *enumerations*, in Rust is a feature that allows you to define a type by listing its possible values. ***Enums*** may seem similar to ***structs***, but they are not. 
 
 **Distinction between structs and enums —** ***Structs*** are used to create a type that represents some information through multiple fields, meanwhile ***enums*** are used to create a type with constrained set of values so as to allow pattern matching to see which values
@@ -85,4 +91,4 @@ note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 - `match`
 - `if let`
 
-I will explain pattern matching using these operators in ***012-match_and_if_let.md***
+I will explain pattern matching using these operators in <a href="https://github.com/abyanmajid/study-notes/blob/main/notes_self_study/rust/012-match_and_if_let.md">***012-match_and_if_let.md***</a>
