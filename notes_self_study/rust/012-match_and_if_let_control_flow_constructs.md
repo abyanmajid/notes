@@ -1,6 +1,6 @@
 # `match` and `if let` Control Flow Constructs
 
-*Date written: May 30, 2023* \
+*Date written: June 7, 2023* \
 *By: Abyan Majid*
 
 - [`match` and `if let` Control Flow Constructs](#match-and-if-let-control-flow-constructs)
