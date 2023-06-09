@@ -7,7 +7,7 @@
   - [Defining an Enum](#defining-an-enum)
   - [Assinging a variant to a variable](#assinging-a-variant-to-a-variable)
   - [The `Option` enum](#the-option-enum)
-    - [Panic due to use of the `Option` enum](#panic-due-to-use-of-the-option-enum)
+    - [The problem with `Option`](#the-problem-with-option)
     - [Pattern matching](#pattern-matching)
 
 ***Enums***, short for *enumerations*, in Rust is a feature that allows you to define a type by listing its possible values. ***Enums*** may seem similar to ***structs***, but they are not. 
@@ -68,29 +68,36 @@ Here's a simple breakdown of the enum:
     }
     ```
 
-### Panic due to use of the `Option` enum
-In Rust, a ***panic*** is a form of error handling for unrecoverable situations, where the program cannot safely recover and continue executing. Below is an example of the use of `None` variant of the `Option` enum which results in a panic.
+### The problem with `Option`
+There are plenty ways you can unintentionally produce an error when working with the `Option` enum, for its which variants are abitrary values. The following is an example of an error that may occur:
 
 ```rust
 fn main() {
     let option: Option<i32> = None;
     
-    // Using `unwrap()` method
-    let value = option.unwrap(); // Causes a panic
+    let value: i32 = option; // Compilation error: mismatched types
     println!("Value: {}", value);
 }
 ```
 
-In this case, we have an `Option<i32>` variable called `option`, which holds the variant `None`. Then, we tried to extract the value of `option` using the `unwrap()` method. However, since `option` is `None`, there was nothing for `unwrap()` to extract, therefore resulting in panic - outputting the error message below.
+In this case, we have an `Option<i32>` variable called `option`, which holds the variant `None`. Then, we tried to assign the value of `option` to another variable `value`. This code gives us a "mismatch" compilation error because we tried to assign `None` to a variable that only accepts values of type `i32`.
 
 ```
-thread 'main' panicked at 'called `Option::unwrap()` on a `None` value', src/main.rs:4:19
-note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error[E0308]: mismatched types
+ --> src/main.rs:4:23
+  |
+4 |     let value: i32 = option;
+  |                       ^^^^^^ expected `i32`, found enum `Option`
+  |
+  = note: expected type `i32`
+             found enum `Option<i32>`
+
+error: aborting due to previous error
 ```
 
 ### Pattern matching
-Rust promotes a safer approach to handling optional values using pattern matching, in order to avoid errors like these. Specifically, there are two additional control flow operators you can use for pattern matching in rust, which are:
+Rust promotes a safer approach to handling optional values using pattern matching, in order to avoid errors like these. Specifically, there are two additional control flow constructs you can use for pattern matching in rust, which are:
 - `match`
 - `if let`
 
-I will explain pattern matching using these control flow operators in <a href="https://github.com/abyanmajid/study-notes/blob/main/notes_self_study/rust/012-match_and_if_let_control_flow_operators.md">***012-match_and_if_let_control_flow_operators.md***</a>
+I will explain pattern matching using these control flow constructs in <a href="https://github.com/abyanmajid/study-notes/blob/main/notes_self_study/rust/012-match_and_if_let_control_flow_constructs.md">***012-match_and_if_let_control_flow_constructs.md***</a>
