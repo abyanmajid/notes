@@ -3,6 +3,12 @@
 *Date written: June 9, 2023* \
 *By: Abyan Majid*
 
+- [Modules and the Filesystem](#modules-and-the-filesystem)
+  - [Overview of module filesystem rules](#overview-of-module-filesystem-rules)
+  - [Module definition with the `mod` keyword](#module-definition-with-the-mod-keyword)
+  - [Moving Modules into Other Files](#moving-modules-into-other-files)
+    - [Extracting a submodule](#extracting-a-submodule)
+  
 Just as how you can organize your program by grouping lines of code into reusable functions, you can also further organize your program by grouping functions into modules.
 
 A *module* is like a container that allows you to group related functionalities together.
