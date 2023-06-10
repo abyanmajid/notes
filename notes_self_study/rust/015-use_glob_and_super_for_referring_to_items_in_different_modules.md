@@ -1,5 +1,14 @@
 # `use`, `*`, and `super` for Referring to Items in Different Modules.
 
+*Date written: June 10, 2023* \
+*By: Abyan Majid*
+
+- [`use`, `*`, and `super` for Referring to Items in Different Modules.](#use--and-super-for-referring-to-items-in-different-modules)
+  - [Overview of `use`, `*`, and `super`](#overview-of-use--and-super)
+  - [Bringing items into scope with the `use` keyword](#bringing-items-into-scope-with-the-use-keyword)
+    - [Bringing ALL items from a module or collection with `*` (the *glob operator*)](#bringing-all-items-from-a-module-or-collection-with--the-glob-operator)
+  - [Referring to items in outer modules with `super`](#referring-to-items-in-outer-modules-with-super)
+
 In this note, I discuss how `use`, `*`, and `super` can be utilized to navigate through the module hierarchy and refer to names in different modules.
 
 ## Overview of `use`, `*`, and `super`
