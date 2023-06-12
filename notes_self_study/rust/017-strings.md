@@ -1,9 +1,9 @@
-# str
+# String
 
 *Date written: June 12, 2023* \
 *By: Abyan Majid*
 
-- [str](#str)
+- [String](#string)
   - [`String` vs. `str`](#string-vs-str)
   - [Creating a new string](#creating-a-new-string)
     - [Using `new`](#using-new)
