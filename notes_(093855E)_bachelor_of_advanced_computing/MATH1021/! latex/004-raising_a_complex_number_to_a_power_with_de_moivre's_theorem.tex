@@ -1,0 +1,88 @@
+\documentclass{article}
+
+% Packages for code listing and syntax highlighting
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage[margin=3cm]{geometry} % Adjust the margin value as desired
+\usepackage{setspace}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{textcomp}
+\usepackage{multicol}
+\usepackage{enumitem}
+
+\onehalfspacing
+
+% Define the color theme
+\definecolor{codebackground}{RGB}{242, 242, 242}
+\definecolor{codekeyword}{RGB}{0, 0, 255}
+\definecolor{codecomment}{RGB}{63, 127, 95}
+\definecolor{codestring}{RGB}{163, 21, 21}
+
+% Code listing style for all languages
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{codebackground},
+    basicstyle=\footnotesize\ttfamily,
+    keywordstyle=\color{codekeyword}\bfseries,
+    commentstyle=\color{codecomment}\itshape,
+    stringstyle=\color{codestring},
+    numbers=left,
+    numberstyle=\tiny\color{codecomment},
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=single,
+    frameround=none,
+    framesep=5pt,
+    rulecolor=\color{codebackground},
+    tabsize=4,
+    captionpos=b,
+    xleftmargin=15pt,
+    xrightmargin=15pt
+}
+
+% Set the default style for code listings
+\lstset{style=mystyle}
+
+% Additional packages and settings for math typesetting
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+
+% Define your document content
+\begin{document}
+
+\title{Raising a Complex Number to A Power Using De Moivre's Theorem}
+\author{Abyan Majid}
+\date{\today}
+\maketitle
+\begin{center}
+De Moivre's Theorem gives us a way to raise any complex number $z$ to any integer power $n$.
+
+    Specifically, De Moivre's Theorem is defined as:\\
+    \fbox{$z^n=r^n(\cos(n\theta)+i\sin(n\theta))$, for $n\in\mathbb{Z}$}
+
+\vspace{\baselineskip}
+
+\noindent \textbf{De Moivre's theorem actually also applies to real and complex powers}, but such case is rare.
+
+\vspace{\baselineskip}
+
+\noindent Example: Given that $z=3(\cos\frac{\pi}{4}+i\sin\frac{\pi}{4})$, find $z^4$
+    $$z^4=3^4[\cos(4)(\frac{\pi}{4})+i\sin(4)(\frac{\pi}{4})]$$
+    $$z^4=81(\cos\pi+i\sin\pi)$$
+    $$z^4=-81$$
+
+
+
+You can of course apply De Moivre's Theorem in the exponential form, like so: \fbox{$z=r^ne^{in\theta}$}
+
+\vspace{\baselineskip}
+
+\noindent(Btw, pronounce "De Moivre" as "De Moave" because it's french)
+
+\end{center}
+
+\end{document}
