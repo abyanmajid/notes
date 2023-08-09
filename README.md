@@ -7,4 +7,3 @@ I often make summaries of things I had learned (in a teaching manner) using LaTe
 (<b>PLEASE NOTE</b>: My notes DO NOT undergo professional verification, therefore I implore that you heavily scrutinize as you read)
 
 ![thumbs-up-kazuma.gif](!assets/thumbs-up-kazuma.gif)
->>>>>>> dae0ee0cd603178eca68a42ad225d364945c1576
