@@ -1,5 +1,3 @@
-I often make summaries of things I had learned (in a teaching manner) and i thought it would be nice to collect all of them in a single repository. 
-
-(<b>PLEASE NOTE</b>: My notes DO NOT undergo professional verification, therefore I implore that you heavily scrutinize as you read)
+I often make summaries of things I had learned and i thought it would be nice to collect all of them in a single repository. 
 
 ![thumbs-up-kazuma.gif](!assets/thumbs-up-kazuma.gif)
