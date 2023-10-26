@@ -1,8 +1,0 @@
-# Rene Descartes' I Think, Therefore I Am
-
-*Date Written: June 11, 2022* \
-*By: Abyan Majid*
-
-**This entry is taken from my first ToK exhibition draft which was discarded.**
-
-"Cogito, ergo sum" (translated as "I think, therefore I am") is a philosophical proposition concerning one's existence, posited by René Descartes in his 1637 work 'Discourse on the Method'. In essence, Descartes argued that the act of thinking necessitates the presence of a thinker. Thus, to engage in thought, one must necessarily exist. Upon formulating this concept, Descartes postulated that everything is inherently doubtful, irrespective of supporting or contradicting evidence. Consider, for instance, the existence of God. Does God exist? Perhaps. Insufficient evidence supports God's existence, yet objective disproof remains elusive. Nonetheless, let us question the existence of God. Now, let us contemplate our own existence. Do we exist? Perhaps. I am certain of my existence as I can perceive my body. You, in turn, must exist as you are currently reading my TOK exhibition. Nevertheless, let us cast doubt upon our existence. The truth of anything's existence eludes me, for everything may be a mere illusion. The world I perceive could potentially lack genuine existence. However, the fact that I am contemplating all of these notions indicates that I, at the very least, exist. For if I did not exist, who would be responsible for such thinking and doubting? There must be a subject that exists in order to initiate this cognitive process; otherwise, this entire line of thought would not have occurred.
