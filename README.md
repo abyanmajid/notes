@@ -1,3 +1,25 @@
-I often make summaries of things I had learned and i thought it would be nice to collect all of them in a single repository. 
+This repository is a collection of my study notes. \
+:star:'s denote my favorite documents :)
 
-![thumbs-up-kazuma.gif](!assets/thumbs-up-kazuma.gif)
+- [Bachelor of Advanced Computing Notes](#bachelor-of-advanced-computing-notes)
+- [Other Notes](#other-notes)
+
+## Bachelor of Advanced Computing Notes
+### Level 1 Units
+
+| Unit | Uploaded Documents |
+|-----------------|-----------------|
+| [MATH1064](https://github.com/abyanmajid/notes/tree/main/notes_(093855E)_bachelor_of_advanced_computing/MATH1064_S2_2023) | MATH1064 Cheatsheet:star:, preparatory study notes |
+| [DATA1001](https://github.com/abyanmajid/notes/tree/main/notes_(093855E)_bachelor_of_advanced_computing/DATA1001_S2_2023) | Revision flashcards, some lecture notes |
+| [ELEC1601](https://github.com/abyanmajid/notes/tree/main/notes_(093855E)_bachelor_of_advanced_computing/ELEC1601_S2_2023) | AVR cheatsheet, preparatory study notes |
+| [INFO1110](https://github.com/abyanmajid/notes/tree/main/notes_(093855E)_bachelor_of_advanced_computing/INFO1110_S2_2023) | Test 1 S2 2023 preparation notes |
+| [MATH1021](https://github.com/abyanmajid/notes/tree/main/notes_(093855E)_bachelor_of_advanced_computing/MATH1021/unit_prep_notes) | Preparatory study notes |
+
+## Other Notes
+
+| Topic | Uploaded Documents |
+|-----------------|-----------------|
+| [Rust](https://github.com/abyanmajid/notes/tree/main/notes_self_study/rust) | Tutorial/summaries based on the official Rust book:star: |
+| [Operating Systems](https://github.com/abyanmajid/notes/tree/main/notes_self_study/operating_systems) | Summary of stack and heap memory management |
+| [IB ITGS](https://github.com/abyanmajid/notes/tree/main/notes_ib_diploma/itgs) | Paper 3 May 2023 notes |
+| [IB English B](https://github.com/abyanmajid/notes/tree/main/notes_ib_diploma/english_b) | Summary of Memoir "Tuesdays with Morrie" |
