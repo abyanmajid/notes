@@ -1,3 +1,5 @@
+# [notes](https://github.com/abyanmajid/notes) &middot; [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/abyanmajid/notes/blob/main/LICENSE)
+
 This repository is a collection of my study notes. \
 :star:'s denote my favorite documents :)
 
