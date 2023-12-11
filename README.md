@@ -3,8 +3,8 @@
 This repository is a collection of my study notes. \
 :star:'s denote my favorite documents :)
 
-- [Bachelor of Advanced Computing Notes](#bachelor-of-advanced-computing-notes)
-- [Other Notes](#other-notes)
+[Bachelor of Advanced Computing Notes](#bachelor-of-advanced-computing-notes) \
+[Other Notes](#other-notes)
 
 ## Bachelor of Advanced Computing Notes
 ### Level 1 Units
