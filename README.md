@@ -21,7 +21,7 @@ This repository is a collection of my study notes. \
 
 | Topic | Uploaded Documents |
 |-----------------|-----------------|
-| [Rust](https://github.com/abyanmajid/notes/tree/main/notes_self_study/rust) | Tutorial/summaries based on the official Rust book :star: |
+| [Rust](https://github.com/abyanmajid/notes/tree/main/notes_self_study/rust) | Tutorial/summaries based on the official Rust book |
 | [Linux](https://github.com/abyanmajid/notes/tree/main/notes_self_study/linux) | Linux CLI Cheatsheet :star: |
 | [Operating Systems](https://github.com/abyanmajid/notes/tree/main/notes_self_study/operating_systems) | Summary of stack and heap memory management |
 | [IB ITGS](https://github.com/abyanmajid/notes/tree/main/notes_ib_diploma/itgs) | Paper 3 May 2023 notes |
