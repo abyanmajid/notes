@@ -23,7 +23,7 @@ This repository is a collection of my study notes. \
 |-----------------|-----------------|
 | [Rust](https://github.com/abyanmajid/notes/tree/main/notes_self_study/rust) | Tutorial/summaries based on the official Rust book |
 | [Linux](https://github.com/abyanmajid/notes/tree/main/notes_self_study/linux) | Linux CLI Cheatsheet :star: |
-| [Web Development](https://github.com/abyanmajid/notes/tree/main/notes_self_study/web_development) | JavaScript Cheatsheet |
+| [Web Development](https://github.com/abyanmajid/notes/tree/main/notes_self_study/web_development) | Web Development Cheatsheet |
 | [Operating Systems](https://github.com/abyanmajid/notes/tree/main/notes_self_study/operating_systems) | Summary of stack and heap memory management |
 | [IB ITGS](https://github.com/abyanmajid/notes/tree/main/notes_ib_diploma/itgs) | Paper 3 May 2023 notes |
 | [IB English B](https://github.com/abyanmajid/notes/tree/main/notes_ib_diploma/english_b) | Summary of Memoir "Tuesdays with Morrie" |
