@@ -21,7 +21,7 @@ This repository is a collection of my study notes. \
 
 | Topic | Uploaded Documents |
 |-----------------|-----------------|
-| [Rust](https://github.com/abyanmajid/notes/tree/main/notes_self_study/rust) | Tutorial/summaries based on the official Rust book |
+| [Rust](https://github.com/abyanmajid/notes/tree/main/notes_self_study/rust) | Rust cheatsheet, tutorial/summaries based on the official Rust book |
 | [Linux](https://github.com/abyanmajid/notes/tree/main/notes_self_study/linux) | Linux CLI Cheatsheet :star: |
 | [Web Development](https://github.com/abyanmajid/notes/tree/main/notes_self_study/web_development) | Web Development Cheatsheet, React hooks summary, React + Vite snippets |
 | [Operating Systems](https://github.com/abyanmajid/notes/tree/main/notes_self_study/operating_systems) | Summary of stack and heap memory management |
