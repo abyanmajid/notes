@@ -13,7 +13,7 @@ This repository is a collection of my study notes. \
 |-----------------|-----------------|
 | [MATH1064](https://github.com/abyanmajid/notes/tree/main/notes_(093855E)_bachelor_of_advanced_computing/MATH1064_S2_2023) | MATH1064 Cheatsheet :star:, preparatory study notes |
 | [DATA1001](https://github.com/abyanmajid/notes/tree/main/notes_(093855E)_bachelor_of_advanced_computing/DATA1001_S2_2023) | Revision flashcards, some lecture notes |
-| [ELEC1601](https://github.com/abyanmajid/notes/tree/main/notes_(093855E)_bachelor_of_advanced_computing/ELEC1601_S2_2023) | AVR cheatsheet, preparatory study notes |
+| [ELEC1601](https://github.com/abyanmajid/notes/tree/main/notes_(093855E)_bachelor_of_advanced_computing/ELEC1601_S2_2023) | AVR cheatsheet, A4 permitted notes for exam, preparatory study notes |
 | [INFO1110](https://github.com/abyanmajid/notes/tree/main/notes_(093855E)_bachelor_of_advanced_computing/INFO1110_S2_2023) | Test 1 S2 2023 preparation notes |
 | [MATH1021](https://github.com/abyanmajid/notes/tree/main/notes_(093855E)_bachelor_of_advanced_computing/MATH1021/unit_prep_notes) | Preparatory study notes |
 
