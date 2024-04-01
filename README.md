@@ -16,14 +16,14 @@ This repository is a collection of my study notes. \
 | [ELEC1601](https://github.com/abyanmajid/notes/tree/main/notes_(093855E)_bachelor_of_advanced_computing/ELEC1601_S2_2023) | AVR cheatsheet, A4 permitted notes for exam, preparatory study notes |
 | [INFO1110](https://github.com/abyanmajid/notes/tree/main/notes_(093855E)_bachelor_of_advanced_computing/INFO1110_S2_2023) | Test 1 S2 2023 preparation notes |
 | [MATH1021](https://github.com/abyanmajid/notes/tree/main/notes_(093855E)_bachelor_of_advanced_computing/MATH1021/unit_prep_notes) | Preparatory study notes |
-| [MATH1061](https://github.com/abyanmajid/notes/tree/main/notes_(093855E)_bachelor_of_advanced_computing/MATH1061_S1_2024) | Calculus cheatsheet, linear algebra cheatsheet |
+| [MATH1061](https://github.com/abyanmajid/notes/tree/main/notes_(093855E)_bachelor_of_advanced_computing/MATH1061_S1_2024) | Calculus cheatsheet :star:, linear algebra cheatsheet :star: |
 
 ## Other Notes
 
 | Topic | Uploaded Documents |
 |-----------------|-----------------|
 | [Rust](https://github.com/abyanmajid/notes/tree/main/notes_self_study/rust) | Rust cheatsheet :star:, tutorial/summaries based on the official Rust book |
-| [Linux](https://github.com/abyanmajid/notes/tree/main/notes_self_study/linux) | Linux CLI Cheatsheet :star: |
+| [Linux](https://github.com/abyanmajid/notes/tree/main/notes_self_study/linux) | Linux CLI Cheatsheet |
 | [Web Development](https://github.com/abyanmajid/notes/tree/main/notes_self_study/web_development) | Web Development Cheatsheet, React hooks summary, React + Vite snippets |
 | [Operating Systems](https://github.com/abyanmajid/notes/tree/main/notes_self_study/operating_systems) | Summary of stack and heap memory management |
 | [IB ITGS](https://github.com/abyanmajid/notes/tree/main/notes_ib_diploma/itgs) | Paper 3 May 2023 notes |
