@@ -1,6 +1,8 @@
 # Greedy Algorithms
 
-## Fractional Knapsack Algorithm
+1. [Fractional Knapsack](#fractional-knapsack)
+
+## Fractional Knapsack
 
 **Objective:** To maximize the total value of items that can be placed in the knapsack without exceeding its capacity.
 
@@ -17,30 +19,36 @@
 
 **Output:** Maximum value that can be obtained with the given capacity of the knapsack.
 
-### Pseudocode
+### C++ Implementation
 
-```
-class Item:
-    weight
-    value
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
 
-    constructor(weight, value):
-        this.weight = weight
-        this.value = value
+struct Item {
+    int weight;
+    int value;
+    Item(int w, int v) : weight(w), value(v) {}
+};
 
-function fractionalKnapsack(capacity, items):
-    # Sort items based on value-to-weight ratio in descending order
-    sort items by (value / weight) in descending order
+double fractionalKnapsack(int capacity, std::vector<Item>& items) {
+    // Sort items by value-to-weight ratio in descending order
+    std::sort(items.begin(), items.end(), [](const Item& a, const Item& b) {
+        return (double)a.value / a.weight > (double)b.value / b.weight;
+    });
 
-    totalValue = 0.0
+    double totalValue = 0.0;
 
-    for item in items:
-        if capacity == 0:
-            break
+    for (const Item& item : items) {
+        if (capacity == 0) {
+            break;
+        }
+        int weightToTake = std::min(item.weight, capacity);
+        totalValue += weightToTake * ((double)item.value / item.weight);
+        capacity -= weightToTake;
+    }
 
-        weightToTake = min(item.weight, capacity)
-        totalValue += weightToTake * (item.value / item.weight)
-        capacity -= weightToTake
-
-    return totalValue
+    return totalValue;
+}
 ```
