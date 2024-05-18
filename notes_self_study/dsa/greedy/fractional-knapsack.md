@@ -19,6 +19,32 @@
 
 **Output:** Maximum value that can be obtained with the given capacity of the knapsack.
 
+**Time complexity:** $O(n \log n)$
+
+**Spac complexity:** $O(n)$
+
+### Pseudocode
+```
+function fractionalKnapsack(capacity, items):
+    // items is a list of objects, each having 'weight' and 'value'
+    
+    // Step 1: Sort items by value-to-weight ratio in descending order
+    sort(items by (value / weight) in descending order)
+
+    totalValue = 0.0  // Total value of items in the knapsack
+
+    // Step 2: Iterate through the sorted items and add to the knapsack
+    for each item in items:
+        if capacity is 0:
+            break  // Knapsack is full
+        
+        weightToTake = min(item.weight, capacity)  // Take as much as possible
+        totalValue += weightToTake * (item.value / item.weight)  // Add value of the taken weight
+        capacity -= weightToTake  // Reduce remaining capacity of the knapsack
+
+    return totalValue  // Total value of items in the knapsack
+```
+
 ### C++ Implementation
 
 ```cpp
@@ -52,3 +78,21 @@ double fractionalKnapsack(int capacity, std::vector<Item>& items) {
     return totalValue;
 }
 ```
+
+<!-- # Fractional Knapsack -->
+<!---->
+<!-- **Objective:** -->
+<!---->
+<!-- **Constraints:** -->
+<!---->
+<!-- **Inputs:** -->
+<!---->
+<!-- **Output:** -->
+<!---->
+<!-- **Time complexity: ** -->
+<!---->
+<!-- **Space complexity: ** -->
+<!---->
+<!-- ### Pseudocode -->
+<!---->
+<!-- ### C++ Implementation -->
