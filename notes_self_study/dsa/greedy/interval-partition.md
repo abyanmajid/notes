@@ -5,7 +5,7 @@
 **Constraints:**
 
 - Each interval is represented as a pair $(start, end)$
-- Intervals can overlap, meaning that for two intervals $(a,b)$ and $(c,d)$, it is possible that $(a<d\land c<b)$.
+- Intervals can overlap, meaning that for two intervals $(a,b)$ and $(c,d)$, it is possible that $(a\lt d \land c\lt b)$.
 
 **Input:** A list of interval, where each interval is represented as a tuple $(start,end)$
 
