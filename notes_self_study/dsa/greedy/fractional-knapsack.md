@@ -1,8 +1,4 @@
-# Greedy Algorithms
-
-1. [Fractional Knapsack](#fractional-knapsack)
-
-## Fractional Knapsack
+# Fractional Knapsack
 
 **Objective:** To maximize the total value of items that can be placed in the knapsack without exceeding its capacity.
 
