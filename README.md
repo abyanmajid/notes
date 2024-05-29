@@ -23,6 +23,7 @@ This repository is a collection of my study notes. \
 | Topic | Uploaded Documents |
 |-----------------|-----------------|
 | [Rust](https://github.com/abyanmajid/notes/tree/main/notes_self_study/rust) | Rust cheatsheet :star:, tutorial/summaries based on the official Rust book |
+| [Data Structures and Algorithms](https://github.com/abyanmajid/notes/tree/main/notes_self_study/dsa) | Summary of algorithms with their pseudocode and C++ implementation |
 | [Linux](https://github.com/abyanmajid/notes/tree/main/notes_self_study/linux) | Linux CLI Cheatsheet |
 | [Web Development](https://github.com/abyanmajid/notes/tree/main/notes_self_study/web_development) | Web Development Cheatsheet, React hooks summary, React + Vite snippets |
 | [Operating Systems](https://github.com/abyanmajid/notes/tree/main/notes_self_study/operating_systems) | Summary of stack and heap memory management |
