@@ -173,6 +173,9 @@ Infrastructure as code is the practice of describing infrastructure in a textual
 - **CONTINUOUS INTEGRATION:** Continuously building, testing, and merging to master
 - **CONTINUOUS DELIVERY:** Continuously deploying to some environment that mimics the production (but is not production), such as staging
 
+![image](https://github.com/abyanmajid/notes/assets/108279046/e67c4072-07c7-4ead-845f-c7f67c6f285b)
+
+
 ### Continuous integration
 
 - Developers integrate code often
@@ -180,4 +183,31 @@ Infrastructure as code is the practice of describing infrastructure in a textual
 - Merge PRs only if they pass the tests!
 
 Frequent PRs mean higher code quality because this means more frequent code review! And it also means gigantic reduction in integration risk, because you'd be testing in small batches so the probability for breakage is minimised.
+
+### Continuous delivery
+
+**Release to production at any time:** The main branch should always be ready to deploy! Which means you should always build and test feature branches and merge to the main branch ONLY if it passes the tests! In this sense, CI is a precondition to CD!
+
+### CI/CD pipeline
+
+The CI/CD pipeline is comprised of automated gates that create a pipeline of checks:
+
+1. Unit testing
+2. Code quality checks
+3. Integration testing
+4. Security testing
+5. Vulnerability scanning
+6. Package signing
+
+What a CI/CD pipeline needs:
+
+- A remote repo to store all of your source code.
+- A build server to build the app from src (stuff like Github Actions provide this for you)
+- An integration server to automate the build
+- An artifact repository that store binaries that have been proven and tested to work
+- Some tool to automatically configure and deploy
+
+### How DevOps manages risk
+
+Deployment is king, you gotta deploy often! After writing code, you build it and deploy it to a development environment, then to a test environment, then to a staging environment, then to a production environment. Computers are excellent at repetitive tasks, so if you deploy often, you KNOW that it will work in production.
 
