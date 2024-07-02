@@ -40,3 +40,9 @@ You may think that pair programming is using twice the resources to get the same
 ## Working in small batches
 
 You should work in small batches (eg., using the single piece flow) so that you get a much quicker feedback loop which helps you identify any problems before you'd get too deep and waste time and resources.
+
+## Minimal viable product (MVP)
+
+1. MVP isn't "Phase 1" of a project, it's the minimal thing (an experiment) to test your value hypothesis and learn
+2. MVP is focused on sharpening the axe, not the delivery. We wan't to learn a lot so we understand well how to go about implementing the actual project
+3. At the end of each MVP, you decide whether to pivot or to continue with the original idea. We want to build exactly what the customer wants and we want to do it well!
