@@ -167,3 +167,17 @@ Infrastructure as code is the practice of describing infrastructure in a textual
 
 - Applications are packaged in containers, and the same containers that runs in production can be run locally.
 - You make updates to the images, not the containers! So the production containers should be redeployed with newer images, not the other way around.
+
+## Continuous Integration & Continuous Delivery
+
+- **CONTINUOUS INTEGRATION:** Continuously building, testing, and merging to master
+- **CONTINUOUS DELIVERY:** Continuously deploying to some environment that mimics the production (but is not production), such as staging
+
+### Continuous integration
+
+- Developers integrate code often
+- Developers work in short-lived feature branches that are then pushed to the staging branch and each pull-request is verified by automated build and testing (this is CI automation)
+- Merge PRs only if they pass the tests!
+
+Frequent PRs mean higher code quality because this means more frequent code review! And it also means gigantic reduction in integration risk, because you'd be testing in small batches so the probability for breakage is minimised.
+
