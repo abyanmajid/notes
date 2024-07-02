@@ -91,13 +91,13 @@ For scenarios:
 Example from a retail store:
 ![image](https://github.com/abyanmajid/notes/assets/108279046/e4e886e3-df1e-4efd-a7d0-6d263f6d411f)
 
-### Cloud-native architecture
+## Cloud-native architecture
 
 - The cloud-native architecture is a collection of independently deployable microservices.
 - Stateless microservices each maintain their own state in a separate database or persistent object store
 - Microservices are loosely coupled services, designed for scalability and communication with APIs
 
-### Designing for failure
+## Designing for failure
 
 - Failures are inevitable! so we need to embrace failures as they will happen!
 - We need to learn how to avoid failures, but also what to do when they do happen!
@@ -105,11 +105,11 @@ Example from a retail store:
 - Plan to retry! (with exponential backoff)
 - Cache when appropriate
 
-#### The retry pattern
+### The retry pattern
 
 You retry and it fails, and you wait a second and try again but still fails. Then you wait 2 seconds, then 4 seconds, then 8 seconds. In essence, you backoff in an exponential manner!
 
-#### Circuit breaker pattern
+### Circuit breaker pattern
 
 The circuit breaker pattern aims to solve the cascading problem i.e., pivot when a microservice is not available and their unavailability causes a cascade of other services to go down. This is how it works:
 
@@ -118,7 +118,7 @@ The circuit breaker pattern aims to solve the cascading problem i.e., pivot when
 3. **Open state:** When the circuit is open, requests to the failing service are blocked or redirected to a fallback method, like an alternate response or an error message, while allowing some time for the failing service to recover.
 4. **Half-open state (recovery):** After a certain period, the circuit breaker allows a few requests to see if the service has recovered. If these requests succeed, then the circuit is closed again and the normal operation resumes.
 
-#### Bulkhead pattern
+### Bulkhead pattern
 
 This pattern aims to isolate different parts of a system to prevent a failure in one part from affecting the entire system. Here's how it works:
 
@@ -126,11 +126,11 @@ This pattern aims to isolate different parts of a system to prevent a failure in
 2. **Resource allocation:** Each isolated component has its own dedicated resources (e.g., threads, memory, connections). This ensures that if one component fails, it wont consume resources needed by other services.
 3. **Containment of failures:** If a failure does occur in one service, the failure is contained within that service and the rest of the system continues to function normally preventing a cascading failure.
 
-#### Chaos engineering (also known as monkey testing)
+### Chaos engineering (also known as monkey testing)
 
 This is simply when you deliberately kill services - because you don't know how something will respond to failure until it actually fails!
 
-#### Traditional Ops vs DevOps
+## Traditional Ops vs DevOps
 
 1. In traditional ops, you have manual configuration changes to critical infrastructure. Meanwhile, in DevOps, we deploy to all environments automatically via CI/CD pipelines.
 2. In traditional ops, application architectures are defined by network design. In DevOps, it's the other way around! Network design is defined by application architectures.
@@ -138,4 +138,18 @@ This is simply when you deliberately kill services - because you don't know how 
 4. In traditional ops, risk is managed through change windows. In DevOps, risk is managed through progressive activation.
 5. In traditional ops, we build everything once and try to maintain it for once. In DevOps, builds are repeatable, leveraging infrastructure as code!
 
+**Diametrically opposed cultures:** Traditional Ops and DevOps are opposed, and, when these two cultures clash, it's a no-win scenario where:
+
+- The development team wants innovation!
+- But the operations team wants stability!
+
+This often called the "wall of confusion" and this is bad! When the website works, the developers gets the praise! But when the website's down the operations gets the blame! This is not healthy working environment.
+
+## Required DevOps behaviours
+
+1. Shared ownership and high collaboration
+2. Risk management by embracing changes
+3. Ephemeral infrastructure as code
+4. Automated self-service
+5. Feedback loops and data-driven responses
 
