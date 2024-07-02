@@ -129,3 +129,13 @@ This pattern aims to isolate different parts of a system to prevent a failure in
 #### Chaos engineering (also known as monkey testing)
 
 This is simply when you deliberately kill services - because you don't know how something will respond to failure until it actually fails!
+
+#### Traditional Ops vs DevOps
+
+1. In traditional ops, you have manual configuration changes to critical infrastructure. Meanwhile, in DevOps, we deploy to all environments automatically via CI/CD pipelines.
+2. In traditional ops, application architectures are defined by network design. In DevOps, it's the other way around! Network design is defined by application architectures.
+3. In traditional ops, bespoke insfrastructure is built once, then maintained. In DevOps, we have ephemeral infrastructure created for each new deployment.
+4. In traditional ops, risk is managed through change windows. In DevOps, risk is managed through progressive activation.
+5. In traditional ops, we build everything once and try to maintain it for once. In DevOps, builds are repeatable, leveraging infrastructure as code!
+
+
