@@ -117,3 +117,15 @@ The circuit breaker pattern aims to solve the cascading problem i.e., pivot when
 2. **Failure detection:** If a service starts to fail (e.g., it's too slow or returning errors) the circuit breaker counts these failures. WHen the number of failures reaches a certain threshold, the circuit breaker trips and open the circuit
 3. **Open state:** When the circuit is open, requests to the failing service are blocked or redirected to a fallback method, like an alternate response or an error message, while allowing some time for the failing service to recover.
 4. **Half-open state (recovery):** After a certain period, the circuit breaker allows a few requests to see if the service has recovered. If these requests succeed, then the circuit is closed again and the normal operation resumes.
+
+#### Bulkhead pattern
+
+This pattern aims to isolate different parts of a system to prevent a failure in one part from affecting the entire system. Here's how it works:
+
+1. **Isolation:** The system is divided into isolated services, each running in its own environment (e.g., have each service ran by a separate docker container)
+2. **Resource allocation:** Each isolated component has its own dedicated resources (e.g., threads, memory, connections). This ensures that if one component fails, it wont consume resources needed by other services.
+3. **Containment of failures:** If a failure does occur in one service, the failure is contained within that service and the rest of the system continues to function normally preventing a cascading failure.
+
+#### Chaos engineering (also known as monkey testing)
+
+This is simply when you deliberately kill services - because you don't know how something will respond to failure until it actually fails!
