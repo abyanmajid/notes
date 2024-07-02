@@ -16,3 +16,13 @@ The conway's law state that an organization will produce a product whose archite
 If you have 3 teams to build something whose tasks are different and works in silos e.g., a UI team, an app team, and a database team, you will have a 3-tier architecture!
 
 **It's better to organize teams around business domains:** For example, you can have a team that deals with accounts! This team has their own database, user interface, and backend! Then you can have another team who deals with shipping, receiving, and inventory, who also has their own user interface, application, and database. This is the crux of microservices development!
+
+### Align teams with the business
+
+- Each team has its own mission aligned with the business
+- Teams have end-to-end responsibility for what they build
+- Teams should have a long-term mission usually around a single business domain
+
+
+
+
