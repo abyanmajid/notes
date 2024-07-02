@@ -153,3 +153,17 @@ This often called the "wall of confusion" and this is bad! When the website work
 4. Automated self-service
 5. Feedback loops and data-driven responses
 
+## Infrastructure as code
+
+Infrastructure as code is the practice of describing infrastructure in a textual format that is executable (otherwise known as code!) You do this using configuration management systems such as Ansible. You never want to perform configurations manually because this is extremely error prone! Then, you can take that infrastructure as code into version control.
+
+### Ephemeral immutable infrastructure
+
+- Server drifts is a major source of failure i.e., teams change and the configrations of servers drift from the original and these causes problems in the most unpredictable ways.
+
+- Infrastructure is transient, which means it should be easily replacable as opposed to being something that is permanent and static. Servers are cattle, not pets!
+
+### Immutable delivery via containers
+
+- Applications are packaged in containers, and the same containers that runs in production can be run locally.
+- You make updates to the images, not the containers! So the production containers should be redeployed with newer images, not the other way around.
