@@ -46,3 +46,16 @@ You should work in small batches (eg., using the single piece flow) so that you 
 1. MVP isn't "Phase 1" of a project, it's the minimal thing (an experiment) to test your value hypothesis and learn
 2. MVP is focused on sharpening the axe, not the delivery. We wan't to learn a lot so we understand well how to go about implementing the actual project
 3. At the end of each MVP, you decide whether to pivot or to continue with the original idea. We want to build exactly what the customer wants and we want to do it well!
+
+## Test-driven development (TDD)
+
+TDD means test cases drive the design and development of code. It allows you to develop faster and with more confidence. It is likely to save you time because any future changes you made is sure to not break the code (because it would pass the testcases if it does) and you save yourself from the debugging hell!
+
+### TDD workflow with Red-Green-Refactor
+
+1. Make a failing test case,
+2. Write code just enough to pass the test case (it doesn't have to be pretty),
+3. Refactor the code and repeat
+
+![image](https://github.com/abyanmajid/notes/assets/108279046/f0a74d82-8c51-414f-b04a-b86adc20d5f8)
+
