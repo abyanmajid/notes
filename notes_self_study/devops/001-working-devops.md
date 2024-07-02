@@ -1,4 +1,4 @@
-# Social coding
+# Working DevOps
 
 ## The social coding principle
 
