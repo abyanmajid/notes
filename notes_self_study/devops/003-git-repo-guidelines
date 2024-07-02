@@ -1,6 +1,0 @@
-# Git repository guidelines
-
-1. Create a separate git repository for every component (eg. for each microservice or whatever unique thing you're building)
-2. Create a new branch for every issue (there should be a `main` branch and a lot of feature branches)
-3. Use pull requests to merge your code back to `main`
-4. Never merge your own pull request! Every pull request is an opportunity for code review!
