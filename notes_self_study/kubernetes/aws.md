@@ -17,3 +17,26 @@ sudo mv /tmp/eksctl /usr/local/bin
 ```
 eksctl version
 ```
+
+## IAM inline policy for EKS full access
+
+```json
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": "eks:*",
+			"Resource": "*"
+		},
+		{
+			"Action": [
+				"ssm:GetParameter",
+				"ssm:GetParameters"
+			],
+			"Resource": "*",
+			"Effect": "Allow"
+		}
+	]
+}
+```
