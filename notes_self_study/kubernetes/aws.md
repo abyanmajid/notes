@@ -40,3 +40,14 @@ eksctl version
 	]
 }
 ```
+
+## Installing `kubectl` on AWS EC2 CLI
+
+MAKE SURE 1.30.0 is as per the version in EC2, replace it where necessary
+
+```
+export RELEASE=1.30.0
+curl -LO https://storage.googleapis.com/kubernetes-release/release/v$RELEASE/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+sudo mv ./kubectl /usr/local/bin/kubectl
+```
