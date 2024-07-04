@@ -51,3 +51,7 @@ curl -LO https://storage.googleapis.com/kubernetes-release/release/v$RELEASE/bin
 chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
 ```
+
+## `eksctl` commands
+
+- `eksctl create cluster --name <cluster-name> --nodes-min=<# nodes>` : create a new cluster
