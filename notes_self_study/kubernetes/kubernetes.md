@@ -17,7 +17,7 @@
 - `kubectl rollout undo deploy <name> --to-revision=<revision>` : undo the deployment to a specific revision
 - `kubectl get ns` : get all namespaces
 - `kubectl get all -n <namespace>` : get resources from a specific namespace
-- `kubectl delete -f .` : delete all resources from all yaml scripts in the current directory
+- `kubectl delete all --all` : delete all resources from all yaml scripts in the current directory
 
 ## Types of services
 
