@@ -18,6 +18,7 @@
 - `kubectl get ns` : get all namespaces
 - `kubectl get all -n <namespace>` : get resources from a specific namespace
 - `kubectl delete all --all` : delete all resources from all yaml scripts in the current directory
+- `kubectl get pv` : get all persistent volumes
 
 ## Types of services
 
