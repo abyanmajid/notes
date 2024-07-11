@@ -8,7 +8,7 @@ This repository is a collection of my study notes. \
   <br>
   
   - <a href="https://github.com/abyanmajid/notes/tree/main/notes_(093855E)_bachelor_of_advanced_computing/MATH1061_S1_2024">MATH1061 Cheatsheet</a> (Used by cohort of ~2500 students, 7400+ repeated visits, ~250 constant viewers during exam season :D)
-  - <a href="https://github.com/abyanmajid/notes/tree/main/notes_(093855E)_bachelor_of_advanced_computing/MATH1064_S2_2023">MATH1064 Cheatsheet</a> (Used by cohort of ~800 students, 3300+ repeated visits, ~120 constant viewers during exam season :D)
+  - <a href="https://github.com/abyanmajid/notes/blob/main/notes_(093855E)_bachelor_of_advanced_computing/MATH1064_S2_2023/math1064_cheatsheet.pdf">MATH1064 Cheatsheet</a> (Used by cohort of ~800 students, 3300+ repeated visits, ~120 constant viewers during exam season :D)
   
 </details>
 
