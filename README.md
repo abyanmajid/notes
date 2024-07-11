@@ -3,11 +3,17 @@
 This repository is a collection of my study notes. \
 :star:'s denote my favorite documents :)
 
-[Bachelor of Advanced Computing Notes](#bachelor-of-advanced-computing-notes) \
-[Other Notes](#other-notes)
+<details>
+  <summary>Some of my more influential notes :D</summary>
+  <br>
+  
+  - <a href="https://github.com/abyanmajid/notes/tree/main/notes_(093855E)_bachelor_of_advanced_computing/MATH1061_S1_2024">MATH1061 Cheatsheet</a> (Used by cohort of ~2500 students, 7400+ repeated visits, ~250 constant viewers during exam season :D)
+  - <a href="https://github.com/abyanmajid/notes/tree/main/notes_(093855E)_bachelor_of_advanced_computing/MATH1064_S2_2023">MATH1064 Cheatsheet</a> (Used by cohort of ~800 students, 3300+ repeated visits, ~120 constant viewers during exam season :D)
+  
+</details>
 
-## Bachelor of Advanced Computing Notes
-### Level 1 Units
+<details>
+  <summary>Bachelor of Advanced Computing notes</summary>
 
 | Unit | Uploaded Documents |
 |-----------------|-----------------|
@@ -18,7 +24,10 @@ This repository is a collection of my study notes. \
 | [MATH1021](https://github.com/abyanmajid/notes/tree/main/notes_(093855E)_bachelor_of_advanced_computing/MATH1021/unit_prep_notes) | Preparatory study notes |
 | [MATH1061](https://github.com/abyanmajid/notes/tree/main/notes_(093855E)_bachelor_of_advanced_computing/MATH1061_S1_2024) | Calculus cheatsheet :star:, linear algebra cheatsheet :star: |
 
-## Other Notes
+</details>
+
+<details>
+  <summary>Independent study notes</summary>
 
 | Topic | Uploaded Documents |
 |-----------------|-----------------|
@@ -29,3 +38,5 @@ This repository is a collection of my study notes. \
 | [Operating Systems](https://github.com/abyanmajid/notes/tree/main/notes_self_study/operating_systems) | Summary of stack and heap memory management |
 | [IB ITGS](https://github.com/abyanmajid/notes/tree/main/notes_ib_diploma/itgs) | Paper 3 May 2023 notes |
 | [IB English B](https://github.com/abyanmajid/notes/tree/main/notes_ib_diploma/english_b) | Summary of Memoir "Tuesdays with Morrie" |
+
+</details>
