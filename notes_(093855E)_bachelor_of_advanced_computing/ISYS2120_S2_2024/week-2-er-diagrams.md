@@ -73,3 +73,37 @@ More on attributes:
 **Key:** Instead of a PK, there may instead be >= 1 attrs that in combination could serve to distinguish entities. Any attribute, or combinations of attrs, that do so is called a "Key".
 
 **Relationship:** Connects >= 2 entities (often from different entity types) e.g., John _is enrolled in_ ISYS2120
+
+**Relationship type (or relationship set):** A set of similar relationships where the entities in each relationship are always from the same entity types.
+
+**Relationship in ER Diagram:** Diamond represents a relationship type, lines connect the involved entity types to the relationship type
+
+<img width="246" alt="image" src="https://github.com/user-attachments/assets/8f5628bc-9c8d-47dc-aad8-aa8caeb2d7c4">
+
+**Relationship-Attribute:** Relationships can have additional props e.g., John enrols in ISYS2120 as an elective (so John and ISYS2120 are related, and Elective is the value of the _degree_role_ attr for this relationship)
+
+**Relationship-Role:** Each participating entity can be named with an explicit role e.g., John is value of _Student_ role, ISYS2120 value of _Subject_ role. This is useful for relationship type that relates elements of same entity type ("recursive" relationship type)
+
+e.g., "Supervises" is a relationship type between 2 employees. One has role "Manager", the other has role "Subordinate"
+
+**Graphical rep. of Relationships in ER diagrams:**
+
+<img width="404" alt="image" src="https://github.com/user-attachments/assets/4f602ac1-2bdf-4710-a4ea-1240d79a6f2f">
+
+**Relationship degree:** The number of entity types involved
+
+- Unary relationship (also called "Recursive relationship")
+
+<img width="175" alt="image" src="https://github.com/user-attachments/assets/38e7297d-1edc-4ad9-badc-6d8e7a20ab74">
+
+- Binary relationship
+
+<img width="224" alt="image" src="https://github.com/user-attachments/assets/f8a5d9c8-3b27-482c-a99f-2052aa12b818">
+
+- Ternary relationship (involves 3 entity types)
+
+<img width="216" alt="image" src="https://github.com/user-attachments/assets/e4005cb0-44a5-460f-b0bd-0966c3f203b1">
+
+
+
+
