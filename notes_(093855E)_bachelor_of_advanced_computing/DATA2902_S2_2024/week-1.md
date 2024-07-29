@@ -227,3 +227,17 @@ sim1
 
 <img width="206" alt="image" src="https://github.com/user-attachments/assets/388c64d7-533f-4190-ad1f-88b6052592e6">
 
+So, our test statistic $T=6.26$ is much smaller than the actual data $t_0=18$. So let's try to simulate this more than just once (say, 3000 simulations)
+
+Now we know the shape of the distribution of test statistic $T$ when $H_0$ is true. Now, given that $H_0$ is true, how likely is it that we observe a test statistic $T$ as or more exterme than we calculated from our original sample?
+
+```r
+sum(sim_t_stats >= t0)/B
+mean(sim_t_stats >= t0)
+```
+
+```
+0.001
+```
+
+In 0.1% of samples, when the null hypothesis is true, we got a simulated sample that was "more extreme" than our original sample.
