@@ -287,3 +287,42 @@ where:
 - $p_{i_0}$ : hypothesised probabilities
 - $e_i$ : expected counts assuming $H_0$ is true
 - $t_0$ : observed test statistic
+
+### Workflow for Chi-squared goodness of fit test
+
+<img width="451" alt="image" src="https://github.com/user-attachments/assets/8571c620-33da-4e90-9d70-7586bae124c5">
+
+Example for the no linkage model:
+
+
+<img width="349" alt="image" src="https://github.com/user-attachments/assets/51a5506e-ca6f-478b-b346-af76744918ec">
+
+### Finding p-value
+
+For a test statistic $T=18$, and say, a degrees of freedom of 3 ($df=3$), we can have
+
+```r
+pchisq(18, df = 3, lower.tail = FALSE)
+```
+```
+[1] 0.0004398497
+```
+
+### chisq.test() for the lazy
+
+The `chisq.test()` function in R can do all of chi-squared test for us. We give it the vector of observed counts and the vector of hypothesised probabilities:
+
+```r
+n <- 400
+observed_counts <- c(128, 86, 74, 112)
+no_link_p <- c(0.25, 0.25, 0.25, 0.25)
+chisq.test(observed_counts, p = no_link_p)
+```
+
+```
+	Chi-squared test for given probabilities
+
+data:  observed_counts
+X-squared = 18, df = 3, p-value = 0.0004398
+```
+
