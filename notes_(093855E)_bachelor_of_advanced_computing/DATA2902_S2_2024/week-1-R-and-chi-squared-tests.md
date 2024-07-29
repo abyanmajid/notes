@@ -63,7 +63,7 @@ penguins_clean |>
 
 ****
 
-## Chi-squared tests
+## Chi-squared goodness of fit
 
 **Hypothesis testing**
 
@@ -241,3 +241,49 @@ mean(sim_t_stats >= t0)
 ```
 
 In 0.1% of samples, when the null hypothesis is true, we got a simulated sample that was "more extreme" than our original sample.
+
+### Doing it without simulation
+
+Yep, using a $X^2$ test.
+
+In this example, the test statistic,
+
+$$\displaystyle T=\sum^k_{i=1}\frac{(Y_i - e_i)^2}{e_i}~\chi^2_{k-1}$$
+
+approximately, where $k$ is the number of groups
+
+Let's compare this distribution to the simulated test distribution.
+
+```r
+hist(sim_t_stats, main = "", breaks = 20,
+     probability = TRUE, ylim = c(0, 0.25))
+curve(dchisq(x, df = 3), add = TRUE,
+      col = "blue", lwd = 2)
+```
+
+
+<img width="371" alt="image" src="https://github.com/user-attachments/assets/a1e25991-6a81-46bb-8e72-815ce5787c82">
+
+Pretty good fit.
+
+**Chi-squared test degrees of freedom**
+
+In general, the test statistic takes the form,
+
+$$\displaystyle T=\sum^k_{i=1}\frac{(Y_i-e_i)^2}{e_i}~\chi^2_{k-1-q}\text{ (approximately)}$$
+
+where $q$ is the number of parameters that needs to be estimated from the sample.
+
+The approximation will only be accurate if *no expected frequency* is too small. As a rule of thumb, we require all $e_i\geq 5$. Otherwise, we need to pool adjacent categories so that the expected frequencies are always $\geq 5$
+
+**Table for calculating test statistic manually:**
+
+
+<img width="241" alt="image" src="https://github.com/user-attachments/assets/6a3baae3-6e13-4542-8210-0d03b46aba76">
+
+where:
+
+- $y_i$ : observed counts
+- $p_{i_0}$ : hypothesised probabilities
+- $e_i$ : expected counts assuming $H_0$ is true
+- $t_0$ : observed test statistic
