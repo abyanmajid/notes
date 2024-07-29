@@ -308,6 +308,26 @@ pchisq(18, df = 3, lower.tail = FALSE)
 [1] 0.0004398497
 ```
 
+### Linkage model
+
+Under the _coupling phase_ linkage model, the hypothesised proportions are:
+
+<img width="233" alt="image" src="https://github.com/user-attachments/assets/167b2684-dc6b-447c-a1d8-be36a34c5ddf">
+
+We need to estimate the parameter $p$, the recombination fraction from the observed data: $\hat{p}$ is the proportion of observed offspring with phenotype $Ab$ or $aB$
+
+$$\hat{p}=\frac{86+74}{400}=0.4$$
+
+Hence the four (estimated) hypothesised probabilities are,
+
+<img width="373" alt="image" src="https://github.com/user-attachments/assets/580a18a4-cd20-4764-8f3f-348c34d83fb8">
+
+<img width="514" alt="image" src="https://github.com/user-attachments/assets/e723fedd-8b7f-432b-b13f-e77de636f35f">
+
+<img width="559" alt="image" src="https://github.com/user-attachments/assets/038be8ed-7bac-4255-bd92-ab90d1d7dfd1">
+
+<img width="410" alt="image" src="https://github.com/user-attachments/assets/100bab20-f489-4f85-b600-70a04768fb68">
+
 ### chisq.test() for the lazy
 
 The `chisq.test()` function in R can do all of chi-squared test for us. We give it the vector of observed counts and the vector of hypothesised probabilities:
@@ -325,4 +345,6 @@ chisq.test(observed_counts, p = no_link_p)
 data:  observed_counts
 X-squared = 18, df = 3, p-value = 0.0004398
 ```
+
+
 
