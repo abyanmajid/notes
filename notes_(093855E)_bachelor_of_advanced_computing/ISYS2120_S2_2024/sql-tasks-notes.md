@@ -127,3 +127,111 @@ SELECT *
 ```
 
 e.g., in the above example, SQL will include `CR`, `D` and anything that falls lexicographically between `CR` and `D` such as `CRA`, `CRB`, `CR1`, `CS`, `CT`, `CU`, etc
+
+`IN`: You can alternatively use the `IN` operator to query based on a discrete set of values (essentially test for value-set membership)
+
+```sql
+SELECT *
+  FROM Enrolled
+ WHERE grade IN ('CR', 'D', 'HD');
+```
+
+**Inequality operators:** `<>`, `!=`, `NOT`
+
+**Ordering:** `ORDER BY`
+
+- `ASC` : ascending order
+- `DESC` : descending order
+
+You can do multi-attribute ordering
+
+```sql
+SELECT studentId, age, address
+  FROM Student
+ ORDER BY age DESC, address ASC;
+```
+
+**Duplicates:**
+
+- `DISTINCT` : eliminates duplicates
+- `ALL` : inlude duplicates
+
+```sql
+SELECT DISTINCT address
+  FROM Student;
+```
+
+```sql
+SELECT ALL address
+  FROM Student
+ WHERE age BETWEEN 18 and 25;
+```
+
+**Pattern matching: `LIKE`**
+
+- `%` represents any sequence of zero or more characters
+
+```sql
+SELECT uosCode, uosName
+  FROM UnitOfStudy
+ WHERE uosName LIKE 'Database%';
+```
+
+The above query returns any uosName that STARTS with "Database"
+
+```sql
+SELECT uosCode, uosName
+  FROM UnitOfStudy
+ WHERE uosName LIKE '%Database%';
+```
+
+The above query returns any uosNAME that CONTAINS "Database"
+
+- `_` represents exactly one character
+
+```sql
+SELECT uosCode, uosName
+  FROM UnitOfStudy
+ WHERE uosCode LIKE 'INFO1___';
+```
+
+The above query returns any uosCode that starts with "INFO1" followed by EXACTLY 3 characters.
+
+**Case-insensitive matching with `LIKE`**
+
+`LIKE` comparisons are case-sensitive by default. The following query returns `f` for `false`
+
+```sql
+SELECT 'USyd' LIKE 'usyd';
+```
+
+You need to lowercase/uppercase both operands to achieve case-insensitive matching. The following returns `t` for `true`
+
+```sql
+SELECT LOWER('USyd') LIKE 'usyd';
+```
+
+**Pattern matching with Regex in modern DBMSs:**
+
+- PostgreSQL offers `SIMILAR TO`
+- Oracle offers `regexp_like`
+
+e.g., in PostgreSQL, the following query uses regex to match all subjects of which `title` starts with `'Advanced'` or `'Data'`
+
+```sql
+SELECT uosCode, uosName
+  FROM UnitOfStudy
+ WHERE uosName SIMILAR TO '(Advanced|Data)%';
+```
+
+e.g., the following query returns `uosCode` that starts with `COMP` followed by 4 digits
+
+```sql
+SELECT uosCode, uosName
+  FROM UnitOfStudy
+ WHERE uosCode SIMILAR TO 'COMP[[:digit:]]{4}';
+```
+
+
+
+
