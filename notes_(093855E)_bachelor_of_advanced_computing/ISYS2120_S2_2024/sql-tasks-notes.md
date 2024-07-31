@@ -247,3 +247,86 @@ SQL provides a special way to check for `NULL` by writing `IS NULL` or `IS NOT N
 SELECT * FROM Enrolled;
 ```
 
+**Storing queries as views via `CREATE VIEW`:**
+
+The `CREATE VIEW` DDL statement extends the current database schema with a new VIEW.
+
+```sql
+CREATE VIEW name AS <query>;
+```
+
+A view "stores" a query and makes it reusable by calling it AS IF it was a table. That's right, views are different from tables. Its contents are dynamically retrieved from the underlying tables each time it's referenced in a query.
+
+Example:
+
+```sql
+CREATE VIEW CurrentStudents AS
+  SELECT studentId, uosCode, semester
+    FROM Enrolled
+   WHERE year = 2016;
+   
+SELECT *
+  FROM CurrentStudents;
+```
+
+Existing views can be removed via the `DROP VIEW` command
+
+```sql
+DROP VIEW <viewname>
+```
+
+**Join conditions:**
+
+It is common to relate the foreign key attr(s) of one table to the corresponding primary key in the second table.
+
+<img width="446" alt="image" src="https://github.com/user-attachments/assets/447e24c5-5394-40e7-a74c-03c88a83a0fc">
+
+e.g., `Student.studentId = Enrolled.studentId` means that we want each enrollment record paired with its corresponding student, and NOT any other student. This approach is also called "Equi-Join" because it tests for equality.
+
+```sql
+SELECT Student.studentId, name
+  FROM Student, Enrolled
+ WHERE Student.studentId = Enrolled.studentId
+       AND Enrolled.uosCode = 'INFO2120';
+```
+
+AMBIGUITY: Note that if the two keys are of the same name, then you must prefix each of them with the table name, otherwise you'll get an "Ambiguity" error.
+
+This code returns an ambiguity error:
+
+```sql
+SELECT studentId
+  FROM Student, Enrolled
+ WHERE studentId = studentId;
+```
+
+Here's how to fix it by prefixing:
+
+```sql
+SELECT Student.studentId
+  FROM Student, Enrolled
+ WHERE Student.studentId = Enrolled.studentId;
+```
+
+**Three way join:**
+
+```qsl
+SELECT S.studentId, name
+  FROM Student S, Enrolled E, UnitOfStudy U
+ WHERE S.studentId = E.studentId
+       AND U.uosCode = E.uosCode
+       AND U.uosName = 'Database Systems I';
+```
+
+<img width="449" alt="image" src="https://github.com/user-attachments/assets/3bdb97d7-e72e-44f5-b429-1dbe733a65c9">
+
+
+**Table Aliases:**
+
+You can alias a table name like so (note: we typically choose short aliases such as `S` for `Student`):
+
+```sql
+SELECT S.studentId
+  FROM Student S, Enrolled E
+ WHERE S.studentId = E.studentId;
+```
