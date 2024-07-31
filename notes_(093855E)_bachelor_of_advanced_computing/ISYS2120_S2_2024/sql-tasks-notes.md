@@ -364,7 +364,29 @@ SELECT studentId, name
  WHERE uosName = 'Database Systems I';
 ```
 
-**Test**
+**Inner join with `JOIN...ON` and `JOIN...USING`:**
 
+You can use `JOIN...ON` to join 2 tables based ON A CONDITION (it doesn't necessarily have to be equality!):
 
+```
+r1 JOIN r2 ON ( condition )
+```
+```sql
+SELECT year, name
+  FROM AcademicStaff
+       JOIN Lecture ON (id = lecturer)
+ WHERE uosCode = 'COMP5138';
+```
+
+You can alternatively use `JOIN...USING` to join 2 tables whenever all specified FIELD(s) have the same value in both tuples. (Note: this assumes these attrs occur with the same name in both tables!)
+
+```
+r1 JOIN r2 USING ( field(s) )
+```
+```sql
+SELECT name
+  FROM Student
+       INNER JOIN Enrolled USING (studentId)
+ WHERE uosCode = 'INFO2120';
+```
 
