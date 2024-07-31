@@ -330,3 +330,41 @@ SELECT S.studentId
   FROM Student S, Enrolled E
  WHERE S.studentId = E.studentId;
 ```
+
+**Multiple Explicit Joins**
+
+```sql
+SELECT S.studentId, name
+  FROM Student S, Enrolled E, UnitOfStudy U
+ WHERE S.studentId = E.studentId
+       AND U.uosCode = E.uosCode
+       AND U.uosName = 'Database Systems I';
+```
+
+**Natural join with `NATURAL JOIN`:**
+
+`NATURAL JOIN` combines all tuples whose values agree in all common attrs (which typically are the foreign-primary key pairs)
+
+```sql
+SELECT *
+  FROM Student NATURAL JOIN Enrolled
+ WHERE uosCode = 'INFO2120';
+```
+
+SIDE EFFECT: When using `NATURAL JOIN` on two tables with NO COMMON ATTRS, it will produce a CROSS JOIN, also called the CROSS PRODUCT of both tables (combining each TABLE_1 tuple with all TABLE_2 tuples). This is typically not what you want.
+
+**Multi-way natural joins:**
+
+We can also use the `NATURAL JOIN` keyword in a sequence of multiple consecutive joins.
+
+```sql
+SELECT studentId, name
+  FROM (Student NATURAL JOIN Enrolled E)
+                NATURAL JOIN UnitOfStudy
+ WHERE uosName = 'Database Systems I';
+```
+
+**Test**
+
+
+
