@@ -232,6 +232,18 @@ SELECT uosCode, uosName
  WHERE uosCode SIMILAR TO 'COMP[[:digit:]]{4}';
 ```
 
+**Checking for `NULL`:**
 
+Comparing `NULL` with anything results in neither true nor false. It is instead unknown. Therefore, it's impossible to conclude whether something is NULL by using comparison operators such as `=` or `!=`.
 
+SQL provides a special way to check for `NULL` by writing `IS NULL` or `IS NOT NULL`
+
+**Making `NULL` visible:**
+
+`NULL` is by default hidden in queries. Often this is inconvenient, so we like to show `NULL` nevertheless. This is how it's done in PostgreSQL:
+
+```sql
+\pset null '[NULL]'
+SELECT * FROM Enrolled;
+```
 
