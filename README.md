@@ -23,7 +23,12 @@ This repository is a collection of my study notes. \
 | [INFO1110](https://github.com/abyanmajid/notes/tree/main/notes_(093855E)_bachelor_of_advanced_computing/INFO1110_S2_2023) | Test 1 S2 2023 preparation notes |
 | [MATH1021](https://github.com/abyanmajid/notes/tree/main/notes_(093855E)_bachelor_of_advanced_computing/MATH1021/unit_prep_notes) | Preparatory study notes |
 | [MATH1061](https://github.com/abyanmajid/notes/tree/main/notes_(093855E)_bachelor_of_advanced_computing/MATH1061_S1_2024) | Calculus cheatsheet :star:, linear algebra cheatsheet :star: |
-
+| [INFO1111](https://github.com/abyanmajid/notes/tree/main/notes_(093855E)_bachelor_of_advanced_computing/INFO1111_S1_2024) | Revision flashcards |
+| [INFO1112](https://github.com/abyanmajid/notes/tree/main/notes_(093855E)_bachelor_of_advanced_computing/INFO1112_S2_2024) | Lecture, lab, and review notes |
+| [COMP2123](https://github.com/abyanmajid/notes/tree/main/notes_(093855E)_bachelor_of_advanced_computing/COMP2123_S1_2024) | Final exam notes |
+| [ISYS2120](https://github.com/abyanmajid/notes/tree/main/notes_(093855E)_bachelor_of_advanced_computing/ISYS2120_S2_2024) | Lecture, lab, and review notes |
+| [DATA2902](https://github.com/abyanmajid/notes/tree/main/notes_(093855E)_bachelor_of_advanced_computing/DATA2902_S2_2024) | Lecture, lab, and review notes |
+| [SOFT2412](https://github.com/abyanmajid/notes/tree/main/notes_(093855E)_bachelor_of_advanced_computing/SOFT2412_S2_2024) | Lecture, lab, and review notes |
 </details>
 
 <details>
