@@ -466,6 +466,51 @@ EXCEPT
    WHERE uosCode = 'INFO3005'
 ```
 
+**Ordering of set results**
 
+The result of set operations are unordered. To make it ordered, you must encapsulate it in an `ORDER BY` clause
 
+```sql
+(
+  SELECT 'a' AS value
+)
+UNION
+(
+  SELECT 'c' AS value
+)
+UNION
+(
+  SELECT 'b' AS value
+)
+ORDER BY value
+```
 
+**Duplicates in set results**
+
+By default `UNION` removes duplicates. If you want duplicates, use `UNION ALL`
+
+```sql
+  SELECT 1, 'a'
+UNION ALL
+  SELECT 1, 'a'
+UNION ALL
+  SELECT 2, 'b'
+```
+
+**Cartesian Product**
+
+Another way to combine tuples from 2 tables is by computing the CARTESIAN PRODUCT. Simplest way to do this is by naming the two relations.
+
+Example: List all possible combinations of studentIds as found in the `Student` table
+
+```sql
+SELECT S1.studentId AS Id1, S2.studentId AS Id2
+FROM Student S1, Student S2
+```
+
+or, using `CROSS JOIN`:
+
+```sql
+SELECT S1.studentId AS Id1, S2.studentId AS Id2
+FROM Student S1 CROSS JOIN Student S2
+```
