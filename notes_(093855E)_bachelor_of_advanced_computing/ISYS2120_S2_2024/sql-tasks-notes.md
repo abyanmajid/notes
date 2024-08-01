@@ -514,3 +514,65 @@ or, using `CROSS JOIN`:
 SELECT S1.studentId AS Id1, S2.studentId AS Id2
 FROM Student S1 CROSS JOIN Student S2
 ```
+
+**Date and time:**
+
+Date and time types:
+
+- `DATE`: A date, e.g., "2011-04-03"
+- `TIME`: A time, e.g., "19:14:06.977434+11"
+- `TIMESTAMP`: A date and time e.g., "2011-04-03 19:14:33.974799+11"
+
+Date and time constants:
+
+- `CURRENT_DATE`: Date component of current system time
+- `CURRENT_TIME`: Time component of current system time
+- `CURRENT_TIMESTAMP`: Full current system time
+- `NOW()`: AN alias for `CURRENT_TIME`
+
+```sql
+CREATE TABLE Orders (
+   orderId     INTEGER PRIMARY KEY,
+   customer    VARCHAR(50),
+   value       FLOAT,
+   orderDate   DATE,
+   lastUpdated TIMESTAMP
+);
+
+INSERT INTO Orders
+VALUES
+  (1, 'USyd', 125.56, CURRENT_DATE, CURRENT_TIMESTAMP);
+        
+SELECT orderDate, lastUpdated
+  FROM Orders;
+```
+
+**Extracting time fields using `EXTRACT`**
+
+`EXTRACT` gives you access to the individual time fields of a `DATE`, `TIME`, or `TIMESTAMP` value. The general syntax is:
+
+```
+EXTRACT(<component> FROM <date_or_time_value>)
+```
+
+The supported component parameters include:
+
+- `DAY` : Day of `DATE` or `TIMESTAMP` value
+- `MONTH` : Month of `DATE` or `TIMESTAMP` value
+- `YEAR` : Year of `DATE` or `TIMESTAMP` value
+- `HOUR` : Hour of `TIME` or `TIMESTAMP` value
+- `MINUTE` : Minute of a `TIME` or `TIMESTAMP` value
+- `SECOND` : Second of a `TIME` or `TIMESTAMP` value
+
+EXAMPLE: Get orders that have been placed in the year 2011
+
+```sql
+SELECT *
+  FROM Orders
+ WHERE EXTRACT(year FROM orderDate) = 2011
+```
+
+
+
+
+
