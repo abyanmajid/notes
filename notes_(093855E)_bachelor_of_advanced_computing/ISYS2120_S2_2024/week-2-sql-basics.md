@@ -231,4 +231,50 @@ R inner join S using <list. of attr)
 ```
 
 - UNION JOIN: includes all cols from each table and an instance for each row of each table.
-  
+
+**Mathematical operators and functions:**
+
+Basic operators: `+`, `-`, `*`, `/`
+
+Functions:
+
+- `mod(a, b)` : remainder of `a / b`
+- `round(n, d)` : rounds `n` to `d` decimal places
+- `trunc(n, d)` : truncates `n` to `d` decimal places
+- `ceil(n)` : computes the smallest integer value not less than `n`
+- `floor(n)` : computes the largest integer value not greater than `n`
+- `abs(n)` : computes the absolute value of `n`
+
+**Floating point data:**
+
+- `NaN` : not-a-number
+- `infinity` : infinity, larger than any number
+- `-infinity` : negative infinity (smaller than any number)
+
+All of these MUST BE GIVEN AS A STRING IN SQL e.g., `'NaN'` or `'infinity'` when addressing a `FLOAT` attr.
+
+```
+CREATE TABLE Test ( val FLOAT );
+INSERT INTO  Test VALUES (0), ('NaN'), (NULL);
+
+\pset null '[NULL]'
+SELECT * FROM Test;
+SELECT * FROM Test WHERE val IS NULL;
+```
+
+`NaN` is NOT equal to any numeric value (including `NaN`). However, PostgreSQL treats `NaN` values as equal, and greater than all non-`NaN` values
+
+**`SERIAL` type:**
+
+`SERIAL` type is not a real type, but a syntax convenience to specify an attr that monotonically increases for each new entry.
+
+`SERIAL` can be treated as an `INTEGER`.
+
+```sql
+CREATE TABLE Test ( 
+    id  SERIAL,
+    val CHAR
+);
+INSERT INTO Test(val) VALUES ('a'), ('b');
+SELECT * FROM Test;
+```
