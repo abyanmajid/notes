@@ -364,9 +364,9 @@ SELECT studentId, name
  WHERE uosName = 'Database Systems I';
 ```
 
-**Inner join with `JOIN...ON` and `JOIN...USING`:**
+**Inner join with `INNER JOIN...ON` and `INNER JOIN...USING`:**
 
-You can use `JOIN...ON` to join 2 tables based ON A CONDITION (it doesn't necessarily have to be equality!):
+You can use `INNER JOIN...ON` to join 2 tables based ON A CONDITION (it doesn't necessarily have to be equality!):
 
 ```
 r1 JOIN r2 ON ( condition )
@@ -374,14 +374,14 @@ r1 JOIN r2 ON ( condition )
 ```sql
 SELECT year, name
   FROM AcademicStaff
-       JOIN Lecture ON (id = lecturer)
+       INNER JOIN Lecture ON (id = lecturer)
  WHERE uosCode = 'COMP5138';
 ```
 
-You can alternatively use `JOIN...USING` to join 2 tables whenever all specified FIELD(s) have the same value in both tuples. (Note: this assumes these attrs occur with the same name in both tables!)
+You can alternatively use `INNER JOIN...USING` to join 2 tables whenever all specified FIELD(s) have the same value in both tuples. (Note: this assumes these attrs occur with the same name in both tables!)
 
 ```
-r1 JOIN r2 USING ( field(s) )
+r1 INNER JOIN r2 USING ( field(s) )
 ```
 ```sql
 SELECT name
@@ -389,4 +389,83 @@ SELECT name
        INNER JOIN Enrolled USING (studentId)
  WHERE uosCode = 'INFO2120';
 ```
+
+**Outer joins with `OUTER JOIN`**
+
+The `OUTER JOIN` operator produces a join tuple EVEN if there is NO JOIN PARTNER AVAILABLE in one of the input relations. The result tuple will just be filled with `NULL` on the corresponding side.
+
+Three variants of `OUTER JOIN`:
+
+1. `r1 LEFT OUTER JOIN r2`: keep all input tuples of `r1` in the result even if there is no join partner from `r2` (fill with `NULL` on the right side if required)
+
+EXAMPLE: List students and the units they have taken, or none if they haven't enrolled yet.
+
+
+```sql
+SELECT studentId, name, uosCode
+  FROM Student
+       LEFT OUTER JOIN Enrolled USING (studentId)
+ ORDER BY studentId, uosCode;
+```
+
+Note: When there is no join partner from `Enrolled`, the student WILL STILL  BE IN THE RESULT, but with a `NULL` value for the unit.
+
+2. `r1 RIGHT OUTER JOIN r2`: like above (i.e., no. 1), but the other way around
+
+EXAMPLE: List all units and enrolled students - or none if no student has enrolled yet
+
+```sql
+SELECT studentId, uosCode, uosName
+  FROM Enrolled
+       RIGHT OUTER JOIN UnitOfStudy USING (uosCode)
+ ORDER BY uosCode;
+```
+
+3. `r1 FULL OUTER JOIN r2`: keep all inout tuples of either input relations (`r1` or `r2`) in the result even if there is no join partner. Fill with `NULL`s on the corresponding side(s) if required
+
+**Set Operations**
+
+- `UNION` : Set union ($r_1 \cup r_2$)
+
+`UNION` combines the results of 2 queries
+
+```sql
+  SELECT 1, 'a'
+UNION
+  SELECT 2, 'c'
+UNION
+  SELECT 3, 'b'
+```
+
+- `INTERSECT` : Set intersection ($r_1 \cap r_2$)
+
+`INTERSECT` combines the results of 2 queries by their intersections
+
+```sql
+  SELECT studentId
+    FROM Enrolled
+   WHERE uosCode = 'INFO2120'
+INTERSECT
+  SELECT studentId
+    FROM Enrolled
+   WHERE uosCode = 'INFO3005'
+```
+
+- `EXCEPT` : Set difference ($r_1\setminus r_2$) (in some other SQL dialects, notably Oracle, this is called `MINUS`
+
+`EXCEPT` removes all tuples from the first result that also exist in the second result.
+
+```sql
+  SELECT studentId
+    FROM Enrolled
+   WHERE uosCode = 'INFO2120'
+         AND grade IS NOT NULL
+EXCEPT
+  SELECT studentId
+    FROM Enrolled
+   WHERE uosCode = 'INFO3005'
+```
+
+
+
 
