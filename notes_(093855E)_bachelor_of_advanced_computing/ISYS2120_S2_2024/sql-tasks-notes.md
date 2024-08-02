@@ -528,7 +528,7 @@ Date and time constants:
 - `CURRENT_DATE`: Date component of current system time
 - `CURRENT_TIME`: Time component of current system time
 - `CURRENT_TIMESTAMP`: Full current system time
-- `NOW()`: AN alias for `CURRENT_TIME`
+- `NOW()`: An alias for `CURRENT_TIME` 
 
 ```sql
 CREATE TABLE Orders (
@@ -563,7 +563,10 @@ The supported component parameters include:
 - `HOUR` : Hour of `TIME` or `TIMESTAMP` value
 - `MINUTE` : Minute of a `TIME` or `TIMESTAMP` value
 - `SECOND` : Second of a `TIME` or `TIMESTAMP` value
+- `DOY` : Day of the year
+- `TIMEZONE` : Timezone
 
+  
 EXAMPLE: Get orders that have been placed in the year 2011
 
 ```sql
@@ -572,7 +575,110 @@ SELECT *
  WHERE EXTRACT(year FROM orderDate) = 2011
 ```
 
+**Time zones in SQL:**
 
+Asking PostgreSQL to give you time in a specific time zone with `AT TIME ZONE`
 
+```sql
+SELECT CURRENT_TIMESTAMP AT TIME ZONE 'AEST';
+```
 
+You can also use `EXTRACT` with the following components to extract time zone from `TIME` and `TIMESTAMP` values:
+
+- `TIMEZONE` : Timezone offset from UTC in seconds of a `TIMESTAMP` value
+- `TIMEZONE_HOUR` : Hour component of the timezone offset from UTC of a `TIMESTAMP` value
+- `TIMEZONE_MINUTE` : Minute component of a timezone offset from a UTC of a `TIMESTAMP` value
+
+Example: Get orders that have been placed in the timezone "UTC+10:10"
+
+```sql
+SELECT *
+  FROM Orders
+ WHERE EXTRACT(timezone_hour FROM orderTime) = 10
+   AND EXTRACT(timezone_minute FROM orderTime) = 0     
+```
+
+**NESTING QUERIES - Co-related subqueries:**
+
+A CO-RELATED subquery is executed for each tuple of the outer query. Its search condition refers to at least one attr of the outer query.
+
+EXAMPLE: Check if whether for each student `S`, there's at least one entry in `Endrolled` for that studnet in `INFO2120`
+
+```sql
+SELECT studentId, name
+  FROM Student S
+ WHERE EXISTS (SELECT *
+                 FROM Enrolled E
+                WHERE E.studentId = S.studentId
+                      AND uosCode = 'INFO2120')
+```
+
+**NESTING QUERIES - Non-co-related subqueries:**
+
+A non-co-related subquery is executed only once. Its result is used for all tuples of the outer query.
+
+```sql
+SELECT studentId, name
+  FROM Student
+ WHERE studentId IN (SELECT E.studentId
+                       FROM Enrolled E
+                      WHERE E.uosCode = 'INFO2120')
+```
+
+**NESTING QUERIES - Subqueries in the `FROM` clause:**
+
+You can also do subqueries in the `FROM` clause:
+
+```sql
+SELECT name
+  FROM (SELECT studentId, name, grade
+          FROM Student
+               JOIN Enrolled USING (studentId)) AS E
+ WHERE grade = 'HD'
+```
+
+**Grouping results with `GROUP BY`**
+
+`GROUP BY` lets you partition a query result into groups of values that have common attrs. That is, we combine all rows within the same group to just one result row. The general syntax is:
+
+```sql
+  SELECT <result_list>
+    FROM <relation(s)>
+   WHERE <condition>
+GROUP BY <list_of_attributes>
+```
+
+EXAMPLE: List all units from the last ten years together with how many students were enrolled in each:
+
+```sql
+SELECT uosCode, COUNT(studentId) AS enrolments
+  FROM Enrolled
+ WHERE year >= 2006
+ GROUP BY uosCode;
+```
+
+Two kinds of columns in the result of a `GROUP BY` query:
+
+1. Anything listed in the `GROUP BY` clause
+2. Aggregate values that are computed from all rows witihn the same group e.g., with `COUNT(*)` or `SUM(...)`
+
+CAVEAT: You cannot list an attr in the `SELECT` clause that is NOT listed in the `GROUP BY` clause.
+
+e.g., the following will fail because `year` is not in `GROUP BY`
+
+```sql
+SELECT uosCode, year, COUNT(studentId) 
+  FROM Enrolled
+ WHERE year >= 2006
+ GROUP BY uosCode;
+```
+
+so, you have to include `year` in `GROUP BY` to make it work:
+
+```sql
+SELECT uosCode, year, COUNT(studentId) 
+  FROM Enrolled
+ WHERE year >= 2006
+ GROUP BY uosCode, year;
+```
 
