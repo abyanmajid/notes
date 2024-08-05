@@ -30,7 +30,7 @@ $$\displaystyle\frac{b+c}{a+b+c+d}$$
 
 $$\displaystyle P(S^-|D^+)=\frac{c}{a+c}$$
 
-**True positive (TP) rate:** The probability the test is positive, given the subject actually has the disease
+**True positive (TP) rate / Sensitivity / Recall:** The probability the test is positive, given the subject actually has the disease
 
 $$P(S^+|D^+)=\frac{a}{a+c}$$
 
@@ -38,11 +38,11 @@ $$P(S^+|D^+)=\frac{a}{a+c}$$
 
 $$P(S^+|D^-)=\frac{b}{b+d}$$
 
-**True negative (TN) rate:** The probability the test is negative, given the subject does NOT have the disease
+**True negative (TN) rate / Specificity:** The probability the test is negative, given the subject does NOT have the disease
 
 $$P(S^-|D^-)=\frac{d}{b+d}$$
 
-**Positive predictive value:** The probability the subject has the disease, given the test is positive
+**Positive predictive value / Precision:** The probability the subject has the disease, given the test is positive
 
 $$P(D^+|S^+)=\frac{a}{a+b}$$
 
@@ -50,4 +50,64 @@ $$P(D^+|S^+)=\frac{a}{a+b}$$
 
 $$P(D^-|S^-)=\frac{d}{c+d}$$
 
+## Conditional Probability
 
+**Definition of Conditional Probability:**
+
+Let $B$ be an event so that $P(B)>0$
+
+The conditional probability of an event $A$ given that $B$ has ocurred is
+
+$$P(A|B)=\frac{P(A\cap B)}{P(B)}$$
+
+<img width="129" alt="image" src="https://github.com/user-attachments/assets/bef8e593-e0de-42e1-a35b-c2616121fc01">
+
+Rearranging, we also have
+
+$$P(A\cap B)=P(A|B)P(B)$$
+
+$$P(A\cap B)=P(B|A)P(A)$$
+
+**Bayes' rule**
+
+$$P(B|A)=\frac{P(A|B)P(B)}{P(A|B)P(B)+P(A|B^c)P(B^c)}$$
+
+Example:
+
+<img width="620" alt="image" src="https://github.com/user-attachments/assets/74134a32-52fe-4a97-9db2-ccf2827f2033">
+
+**Evaluating a classification model in R**
+
+```r
+# install.packages("rpart")
+data(kyphosis, package = "rpart")
+dplyr::glimpse(kyphosis)
+```
+
+```r
+kyphosis = kyphosis |>
+  dplyr::mutate(
+    prediction = if_else(Start >= 9,
+                         "Predict absent",
+                         "Predict present")
+  )
+table(kyphosis$prediction, kyphosis$Kyphosis)
+```
+
+```r
+conf_mat = kyphosis |>
+  dplyr::mutate(
+    prediction = if_else(Start >= 9,
+                         "absent",
+                         "present"),
+    Kyphosis = factor(Kyphosis, levels = c("present", "absent")),
+    prediction = factor(prediction, levels = c("present", "absent"))
+  ) |>
+  yardstick::conf_mat(truth = Kyphosis, estimate = prediction)
+conf_mat
+
+summary(conf_mat) |>
+  select(-2) |>
+  gt::gt() |>
+  gt::fmt_percent(columns = 2, decimals = 1)
+```
