@@ -16,7 +16,7 @@ More notation:
 
 <img width="350" alt="image" src="https://github.com/user-attachments/assets/5edbf55d-45d7-4633-8740-d327302177f5">
 
-<img width="320" alt="image" src="https://github.com/user-attachments/assets/aec38fb3-36bb-468a-977f-2d45fbadb768">
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/aec38fb3-36bb-468a-977f-2d45fbadb768">
 
 **Accuracy:** The probability that the test is correct,
 
