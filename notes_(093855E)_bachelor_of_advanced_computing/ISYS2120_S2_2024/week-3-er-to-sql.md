@@ -43,5 +43,20 @@ If there is also a TOTAL PARTICIPATION constraint for the "many" side, then fore
 
 <img width="204" alt="image" src="https://github.com/user-attachments/assets/ba8eb7ce-a35d-40d4-8001-e3d2811e0e37">
 
+**Mapping of ternary relationship:**
+
+<img width="341" alt="image" src="https://github.com/user-attachments/assets/65db26eb-5f32-4e35-ab18-f48df17c14ed">
+
+**Mapping of ISA-hierarchies:**
+
+- Have 2 distinct relations - one for the superclass, and one for the subclass
+- Superclass attributes (including key and possible relationships) go into the superclass relation
+- Subclass attributes go to the sub-relation; primary key of superclass relation is also included as primary key of subclass relation
+- Primary key of subclass relation is also a non-`NULL` foreign key referencing the superclass relation
+
+<img width="459" alt="image" src="https://github.com/user-attachments/assets/1e6b3cdb-85a7-4eb8-934e-a0f743b9e301">
+
+
+
 
 
