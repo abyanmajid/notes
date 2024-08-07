@@ -181,3 +181,72 @@ You can use `CHECK` to specify a boolean expression that is required to always b
 );
 ```
 
+**Delete tables using `DROP TABLE`:**
+
+You can delete table using the `DROP TABLE` keywords
+
+**You can also alter a table's schema using `ALTER TABLE`:**
+
+You can change the structure of an existing table using `ALTER TABLE`
+
+```sql
+ALTER TABLE name ADD column ... | ADD constraint ... | ...
+```
+
+**Insert into a table using `INSERT`:**
+
+```sql
+INSERT INTO table VALUES ( list-of-expressions )
+```
+
+e.g.,
+
+```sql
+INSERT INTO Student VALUES (12345678, 'Smit'), (12444455, 'Cheng')
+```
+
+**Updating rows using `UPDATE`:**
+
+```sql
+UPDATE UoS
+SET title = 'Awesome Data'
+WHERE ucode = 'ISYS2120'
+```
+
+**Deleting rows using `DELETE FROM`:**
+
+```sql
+DELETE FROM table [ WHERE search_condition ]
+```
+
+e.g., `DELETE FROM Student WHERE name LIKE '%Fekete'`
+
+**Referential integrity on Data Modification:**
+
+Consider Student and Enrolled, and `Enrolled.sid` is a foreign key that references `Student.sid`
+
+When we insert an Enrolled tuple with a non-existent `Student.sid`, then we reject the attempted insertion!
+
+So when the row referenced is trying to get deleted, the default action is to reject that attempt i.e., `NO ACTION`. However, we have other choices:
+
+- Delete all Enrolled tuples that refer to it (`CASCADE`)
+
+```sql
+FOREIGN KEY taughtBy REFERENCES Professor
+  ON UPDATE CASCADE
+  ON DELETE CASCADE
+```
+
+- Set sid in Enrolled tuples that refer to it to a _default sid_
+
+```sql
+FOREIGN KEY taughtBy REFERENCES Professor
+  ON DELETE SET DEFAULT
+```
+
+- Set sid in Enrolled tuples that refer to it to a special value `null`, denoting _unknown_ or _inapplicable_
+
+```sql
+FOREIGN KEY taughtBy REFERENCES Professor
+  ON DELETE SET NULL
+```
