@@ -250,3 +250,7 @@ FOREIGN KEY taughtBy REFERENCES Professor
 FOREIGN KEY taughtBy REFERENCES Professor
   ON DELETE SET NULL
 ```
+
+
+
+
