@@ -87,10 +87,130 @@ Main advantage - Efficient storage ( you dont need to store entire filesystems a
 
 HOW IT WORKS - When a file is modified, the system computes the differences between the new version and the previous version, and stores these differences. So, when we need to revert to a certain version, we'd just apply a series of deltas to the original file.
 
+**Git Stages**
 
+Git has three stages:
 
+1. _MODIFIED_ - you have changed the file but have not comitted it to your database
+2. _STAGED_ - you have marked a modified file in its current version to go into your next commit snapshot
+3. _Committed_ - the modified file is safely stored in your local database
 
+**Git Structure**
 
+1. _Working directory (tree)_ - A single checkout of one version of the project (it's pulled out of the compressed database and placed on the disk for you to modify)
+2. _Staging area (index)_ - A file stores informationa bout what will go into the next commit
+3. _Git directory (repository)_ - Where git stores and tracks files (src). Git adds a special sub-dir to stores history of changes about the project's files and directories
+
+**Working with Git repositories:**
+
+Create a git repo (initializing `.git` dir)
+
+```
+git init
+```
+
+Or clone an existing git repo from elsewhere
+
+```
+git clone <url>
+```
+
+**Git Metadata**
+
+Each version typically has:
+- a unique name to refer to it (Latest version is usually called `Head`)
+- date
+- author
+
+How you might want to use metadata:
+- To know who, when did what
+- To know who to explain a change
+- To know who bears the responsibility to patch issues
+
+**Stages of a Git-controlled project**
+
+There are generally 2 stages:
+
+- _TRACKED_ - git knows about it (unmodified, modified, staged)
+- _UNTRACKED_ - git doesn't know about it
+
+**Branching in Git**
+
+Branches allow you to diverge from the _main line_ of development and continue to make changes without impacing that _main line._
+
+While you might think this is an expensive process, it isn't really when it comes to Git! Branches in Git are lightweight; with every commit, Git stores a _COMMIT OBJECT_ that contains a pointer to the staged snapshot, author's name and email, commit message, and commit/commits before this commit, parent/parents commits.
+
+EXAMPLE:
+
+```
+git add .
+git commit -m "initial commit"
+```
+
+By this point, git checksums each sub-directory and stores those tree objects in the repository. Git then creates a commit object that has the metadata and a pointer to the root project tree so it can re-create that snapshot when needed.
+
+Our repo now contains the following:
+
+- A blob for each committed file
+- A tree which lists the directory contents and which file names are stored as which blobs
+- One commit with a pointer to the root and the commit metadata
+
+<img width="296" alt="image" src="https://github.com/user-attachments/assets/61a33289-c1f1-48d0-a420-6f9d70d53153">
+
+If you make some changes and commit again, the next commit stores a pointer to the commit that came immediately before it.
+
+<img width="345" alt="image" src="https://github.com/user-attachments/assets/2c033b79-eb3a-4320-aba9-bfbc67c054e7">
+
+Default branch is typically called "master" or "main", and as you make commits, you'd be given a default branch that points to the last commit you made.
+
+Git knows which branch is the current by maintaining a special pointer called "HEAD"
+
+To create a new branch, use
+
+```
+git checkout -b my_branch
+```
+
+or u can use
+
+```
+git branch my_branch
+```
+
+To switch to an existing branch use
+
+```
+git checkout my_branch
+```
+
+To show the commits log use
+
+```
+git log
+```
+
+**Git merging**
+
+```
+git checkout -b patch_branch
+git commit -a -m "patched bug"
+git checkout master
+git merge patch_branch
+```
+
+you can then delete the patch branch if you dont need it anymore:
+
+```
+git branch -d patch_branch
+```
+
+**Git conflict resolution**
+
+A developer can make changes to `index.html` in one branch, and another developer can make changes to `index.html` in another branch. You have a conflict here. Git resolves conflicts by appending CONFLICT-RESOLUTION MARKERS to guide you where the conflicts occur
+
+<img width="210" alt="image" src="https://github.com/user-attachments/assets/e5c2496d-511d-4433-ab67-f5d309509234">
+
+To resolve the conflict, you have to either choose on side or the other or merge and remove those special markers.
 
 
 
