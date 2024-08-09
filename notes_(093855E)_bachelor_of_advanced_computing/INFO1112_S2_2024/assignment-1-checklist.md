@@ -11,4 +11,5 @@
 - [ ] SOME ERROR CASES - a non-closed quoted argument should be considered syntax error, and you MUST output this error message to `stderr`: `mysh: syntax error: unterminated quote`
 - [ ] Unterminated quote characters are valid if they are inside quotes of a DIFFERENT type. e.g., ` this  is   "Tom's PC"` should be split as ` ["this", "is", "Tom's PC"]`
 - [ ] When a line is split the first word is always defined as the name of commands to execute. For example, the input line ` sort     input.txt  -o output.txt` will be split as `["sort", "input.txt", "-o", "output.txt"]` with `sort` being the name of the command to execute, and `["input.txt", "-o", "output.txt"]` being the arguments.
-- [ ] 
+- [ ] The command (i.e., first word) will be matched to a built-in command, otherwise, it will be used to execute an executable given by an absolute or relative path e.g., `./my_compiled_prog`
+- [ ] The info you learn ao
