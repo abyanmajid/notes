@@ -110,3 +110,27 @@ Due to the design, we CANNOT extract any info about the incidence of $D$ in the 
 - $P(D^+|R^+)$
 - $P(D^+|R^-)$
 - $\displaystyle RR=\frac{P(D^+|R^+)}{P(D^+|R^-)}$
+
+**Odds ratio**
+
+Odds are a ratio of probabilities - they're used as an alternative way of measuring the likelihood of an event occuring.
+
+If the probability of event $A$ is $P(A)$, then the ODDS of event $A$ is defined as
+
+$$\displaystyle O(A)=\frac{P(A)}{1-P(A)}$$
+
+In the risk/disease setting, the probability of disease for $R^+$ patients is $P(D^+|R^+)$, so the odds is
+
+$$O(D^+|R^+)=\frac{P(D^+|R^+)}{1-P(D^+|R^+)}=\frac{P(D^+|R^+)}{P(D^-|R^+)}$$
+
+**Equivalent definitions of odds ratio (OR)**
+
+The ratio of odds of a disease for $R^+$ patients to the corresponding odds for $R^-$ patients is the odds ratio $OR$:
+
+$$\displaystyle OR=\frac{O(D^+|R^+)}{O(D^+|R^-)}=\frac{\frac{P(D^+|R^+)}{P(D^-|R^+)}}{\frac{P(D^+|R^-)}{P(D^-|R^-)}}$$
+
+This ratio is actually identical to
+
+$$OR=\frac{O(R^+|D^+)}{O(R^+|D^-)}=\frac{\frac{P(R^+|D^+)}{P(R^-|D^+)}}{\frac{P(R^+|D^-)}{P(R^-|D^-)}}$$
+
+which means that unlike $RR$, $OR$ can actually be found from both prospective and retrospective studies.
