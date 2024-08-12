@@ -75,3 +75,38 @@ $$P(D|R)=P(D)$$
 and so,
 
 $$RR=\frac{P(D^+|R^+)}{P(D^+|R^-)}=\frac{P(D^+)}{P(D^+)}=1$$
+
+**Relative risk - Interpretation:**
+
+The relative risk is the ratio of the probability of having the disease in the group with the risk factor to the probability of having the disease in the group without the risk factor.
+
+- $RR=1$ means there is NO DIFFERENCE between the two groups.
+- $RR<1$ implies the disease is LESS LIKELY to occur in the group  with the risk factor
+- $$RR>1$$ implies the disease is MORE LIKELY to occur in the group with the risk factor
+
+**Relative risk - prospective studies:**
+
+<img width="240" alt="image" src="https://github.com/user-attachments/assets/063b2b75-9ba3-4dd3-b682-210d46d8038e">
+
+Given data from a prospective study, we can estimate:
+
+- $\displaystyle P(D^+|R^+)=\frac{a}{a+b}$
+- $\displaystyle P(D^+|R^-)=\frac{c}{c+d}$
+
+Relative risk: 
+
+$$\displaystyle \hat{RR}=\frac{P(D^+|R^+)}{P(D^+|R^-)}=\frac{a(c+d)}{c(a+b)}$$
+
+**Relative risk - retrospetive studies:**
+
+<img width="299" alt="image" src="https://github.com/user-attachments/assets/0b6a91ef-96e0-413a-b555-e92580c8850f">
+
+_WE CANT APPLY RELATIVE RISK TO RETROSPECTIVE STUDIES._
+
+In a retrospective study, we identify two groups, $D^+$ and $D^-$, and we retrospectively assess each group for their risk status, $R^+$ and $R^-$
+
+Due to the design, we CANNOT extract any info about the incidence of $D$ in the pop. because the proportions of cases with $D^+$ and $D^-$ were decided by the investigator. That is, we CANNOT estimate:
+
+- $P(D^+|R^+)$
+- $P(D^+|R^-)$
+- $\displaystyle RR=\frac{P(D^+|R^+)}{P(D^+|R^-)}$
