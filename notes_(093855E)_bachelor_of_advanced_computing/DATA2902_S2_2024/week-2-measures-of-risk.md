@@ -134,3 +134,19 @@ This ratio is actually identical to
 $$OR=\frac{O(R^+|D^+)}{O(R^+|D^-)}=\frac{\frac{P(R^+|D^+)}{P(R^-|D^+)}}{\frac{P(R^+|D^-)}{P(R^-|D^-)}}$$
 
 which means that unlike $RR$, $OR$ can actually be found from both prospective and retrospective studies.
+
+**Odds ratio (OR) and relative risk (RR) in R:**
+
+```r
+table2 = matrix(c(67993, 1386, 6877, 91, 10483, 206, 8910, 252), ncol = 2, byrow
+= T)
+
+colnames(table2) = c("No complications", "Postop complication(s)")
+rownames(table2) = c("No isolation", "<= 3 days", "4-7 days", ">= 8 days")
+
+e1 = table2[1:2, 2:1]
+
+# compute odds ratio
+mosaic::oddsRatio(e1, verbose = T)
+mosaic::relrisk(e1)
+```
