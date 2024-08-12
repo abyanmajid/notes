@@ -70,3 +70,5 @@ rownames(tab) = c("Labor", "Liberal")
 chisq.test(tab, correct = F)
 ```
 
+<img width="365" alt="image" src="https://github.com/user-attachments/assets/1c0c2bdb-aff0-48e9-b903-b636f8b89900">
+
