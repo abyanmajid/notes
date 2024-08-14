@@ -44,6 +44,8 @@ After the `fork` call, both the child and aprent continue execution ONLY if `for
 - in the child process, `fork` returns 0
 - in the parent process, `fork` returns the process ID of the child
 
+`fork` will return a negative number, typically `-1`, for errors (if `fork` is unsuccessful or something went wrong)
+
 **The `exec` syscall**
 
 `exec` is simply a transfer of control; it COMPLETELY REPLACES the calling process by the new program. 
@@ -56,8 +58,18 @@ After the `fork` call, both the child and aprent continue execution ONLY if `for
 
 Zombie - If a child process terminates, but the parent is not "waiting" for it, then it enters the "zombie" state until the parent process waits for it. Zombie means a process is half dead (because their task is done), but also half alive (because the control isn't tranferred back to the parent)
 
+**Starting a process _from_ Python**
 
+You typically just use the `os` module, and use combinations and variations of `fork()` and `exec()`
 
+```
+os.fork()
+os.execle(path, arg0, arg1, ...env)
+```
+
+**Stopping a process with `kill`**
+
+You pass a PID to the `kill` syscall to terminate a process
 
 
 
