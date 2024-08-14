@@ -31,8 +31,30 @@ The default case is that the shell will wait for any command you enter to finish
 
 This will output something like `[1] 32466` where `[1]` is the job ID, and `32466` is the ID of the (child) process being ran in parallel (where parent process is the shell).
 
+**The `fork` syscall**
 
+`fork` createas a new process (PARENT) where memory image and the metadata are an EXACT COPY of the process that called fork (PARENT), with the following few exceptions:
 
+- child process has a new process ID
+- child process has the parent process ID
+- various values of resource metadata (e.g., cpu time used) are reset
+
+After the `fork` call, both the child and aprent continue execution ONLY if `fork` has returned, with the small difference that:
+
+- in the child process, `fork` returns 0
+- in the parent process, `fork` returns the process ID of the child
+
+**The `exec` syscall**
+
+`exec` is simply a transfer of control; it COMPLETELY REPLACES the calling process by the new program. 
+
+`exec` comes in different versions, and they all specify what program to execute (ie you give a pathname).
+
+**The `wait` syscall**
+
+`wait` suspends the execution of the calling process until one of its child processes exits, in which case it returns the PID of the child that exited.
+
+Zombie - If a child process terminates, but the parent is not "waiting" for it, then it enters the "zombie" state until the parent process waits for it. Zombie means a process is half dead (because their task is done), but also half alive (because the control isn't tranferred back to the parent)
 
 
 
