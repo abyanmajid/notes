@@ -60,4 +60,39 @@ ci
 # 1 is not in CI, so there is statisticlly significant association.
 ```
 
-## 3.3 
+## 3.3 Soccer goals
+
+```r
+goals <- c(
+  1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 2, 2, 4, 0, 10,
+  0, 1, 1, 2, 3, 0, 4, 1, 3, 6, 0, 1, 0, 10, 1,
+  2, 1, 0, 1, 1, 2, 3, 3, 3, 1, 2, 0, 0, 0, 0,
+  1, 1, 1, 1, 1, 2, 0, 1, 0, 2, 2, 0, 1, 2, 1,
+  1, 0, 1, 1, 0, 2, 2, 1, 0, 5, 2, 1, 4, 1, 1,
+  0, 0, 1, 3, 0, 1, 0, 1, 2, 2, 0, 2, 1, 1, 1,
+  0, 1, 0, 1, 2, 1, 2, 0, 2, 1, 0, 1, 5, 2
+)
+
+lambda <- mean(goals)
+expected_probs <- dpois(x, lambda)
+expected_y <- expected_probs * n
+
+# Identify categories with expected frequency < 5
+low_freq_indices <- which(expected_y < 5)
+smallest_high_freq_index <- which.min(expected_y[expected_y >= 5])
+
+# Combine low-frequency categories into the smallest high-frequency category
+combined_observed <- observed_y
+combined_expected <- expected_y
+
+combined_observed[smallest_high_freq_index] <- sum(observed_y[low_freq_indices]) + observed_y[smallest_high_freq_index]
+combined_expected[smallest_high_freq_index] <- sum(expected_y[low_freq_indices]) + expected_y[smallest_high_freq_index]
+
+# Remove low-frequency categories
+combined_observed <- combined_observed[-low_freq_indices]
+combined_expected <- combined_expected[-low_freq_indices]
+
+# Calculate the chi-squared statistic
+t_0 <- sum((combined_observed - combined_expected) ^ 2 / combined_expected)
+t_0
+```
