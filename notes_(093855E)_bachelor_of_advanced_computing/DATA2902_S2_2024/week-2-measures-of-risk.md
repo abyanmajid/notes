@@ -161,4 +161,4 @@ The approximate 95% confidence interval for odds ratio is
 
 $$[\text{exp}(\log(\hat{OR})-1.96\text{SE}(\log(\hat{OR}))), \text{exp}(\log(\hat{OR})+1.96\text{SE}(\log(\hat{OR})))]$$
 
-
+For odds ratio, if the CI does NOT include 1, then it suggests **a statistically significant association between the variables**. Conversely, if the CI DOES include 1, then there is **no significant association.**
