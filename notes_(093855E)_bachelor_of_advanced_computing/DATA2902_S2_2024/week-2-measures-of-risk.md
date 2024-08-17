@@ -151,15 +151,14 @@ mosaic::oddsRatio(e1, verbose = T)
 mosaic::relrisk(e1)
 ```
 
-**Standard error**
+**Standard error and confidence intervals**
 
 The asymptotic standard error for the log odds ratio estimator is:
 
 $$\displaystyle\text{SE}(\log(\hat{OR}))=\sqrt{\frac{1}{a}+\frac{1}{b}+\frac{1}{c}+\frac{1}{d}}$$
 
+The approximate 95% confidence interval for odds ratio is
 
-
-
-
+$$[\text{exp}(\log(\hat{OR})-1.96\text{SE}(\log(\hat{OR}))), \text{exp}(\log(\hat{OR})+1.96\text{SE}(\log(\hat{OR})))]$$
 
 
