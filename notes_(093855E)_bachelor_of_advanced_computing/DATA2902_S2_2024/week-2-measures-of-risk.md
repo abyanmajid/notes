@@ -150,3 +150,16 @@ e1 = table2[1:2, 2:1]
 mosaic::oddsRatio(e1, verbose = T)
 mosaic::relrisk(e1)
 ```
+
+**Standard error**
+
+The asymptotic standard error for the log odds ratio estimator is:
+
+$$\displaystyle\text{SE}(\log(\hat{OR}))=\sqrt{\frac{1}{a}+\frac{1}{b}+\frac{1}{c}+\frac{1}{d}}$$
+
+
+
+
+
+
+
