@@ -1,4 +1,4 @@
-<img width="301" alt="image" src="https://github.com/user-attachments/assets/e9241517-d16f-4fb2-b3aa-15025a8171b7"># Week 4 (Build Automation Tools)
+# Week 4 (Build Automation Tools)
 
 ### Task and project
 
@@ -63,7 +63,7 @@ Properties other than built-in ones can be assigned to a task.
 
 A task of type `Copy` copies files from one place into another
 
-<img width="236" alt="image" src="https://github.com/user-attachments/assets/deea8d40-5268-4ed5-b1a2-c7cb77f6a3df">
+<img width="301" alt="image" src="https://github.com/user-attachments/assets/e9241517-d16f-4fb2-b3aa-15025a8171b7">
 
 ### Gradle Task Types - Jar
 
@@ -80,6 +80,27 @@ A task of type `JavaExec` runs a Java class with a `main()` method
 A plug-in is an extension to Gradle which configures projects. 
 
 e.g., the JAVA plug-in (via `apply plugin : 'java'`) adds some tassk to the project which will compile and unit test your Java source code, and bundle into a JAR.
+
+Some tasks added by the Java plug-in:
+
+- `gradle tasks` : list tasks of a project
+- `gradle build` compile and create a JAR file containing main classes and resources
+- `gradle clean` : deletes the build directory, removing all built files
+- `gradle assemble` : compiles and jars your code, but does not run the unit tests
+- `gradle check` : compiles nad tests your code
+
+### Gradle Java Plug-in - Dependencies
+
+Dependencies reference external JAR files that the project is dependent on
+
+<img width="381" alt="image" src="https://github.com/user-attachments/assets/7644bc46-7575-45db-b36b-91b52b1c973a">
+
+### Gradle Java Plug-in - Pubishing JAR file
+
+Artifacts such as JAR files can be published to repositories via `gradle uploadArchives`
+
+<img width="148" alt="image" src="https://github.com/user-attachments/assets/7728df48-e9ee-4356-b7c8-ce4b50a68cc7">
+
 
 
 
