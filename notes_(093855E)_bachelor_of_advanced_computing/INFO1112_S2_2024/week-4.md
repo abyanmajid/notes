@@ -47,6 +47,16 @@ If the RAM is insufficient, the OS can allocate virtual memory to the process fr
 
 ### Interrupt and swap with Virtual Memory
 
-**What happemns if a program attempts to use mememory that the page table has mapped to mass storage?**
+**What happens if a program attempts to use mememory that the page table has mapped to mass storage?**
+
+The access will cause an INTERRUPT that will transfer control to the kernel. An interrupt is like a forced function call to the kernel that occurs between two instructions in such a way that the CPU state is saved and can be restored when the kernel restarts the process.
+
+When the kernel gains control, it will find the page on disk (stored in SWAP AREA) and read it in to a free part of the main memory. Then setup the page table to point to the new physical location and return to the process.
+
+### Paging from disk
+
+If the kernel needs to read in a page from disk, and discovers that there's no free physical memory available, then it has to first write an existing block out to the swap area to free up the memory.
+
+**Performance drawback:** If this happens too frequently, then the system will be very slow and inefficient because the mass storage is much much MUCH slower than RAM and it takes a long time to position a disk and read the page into memory.
 
 
