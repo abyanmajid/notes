@@ -1,4 +1,4 @@
-# Week 4 PREREC-1 Testing means
+<img width="433" alt="image" src="https://github.com/user-attachments/assets/5dd81e55-1837-4f9c-8f8e-d3b43a892b19"><img width="433" alt="image" src="https://github.com/user-attachments/assets/5832fa41-dd7d-42b5-a3a8-56ab715e23c5"># Week 4 PREREC-1 Testing means
 
 Some basic probability facts about samples from _normal populations_:
 
@@ -48,3 +48,35 @@ There's 2 ways you can have 2 samples:
 ```r
 t.test(smokers, non_smokers, alternative = "two.sided", var.equal = TRUE)
 ```
+
+NOTE: THIS ASSUMES EQUAL VARIANCE. If it does not seem reasonable to assume equal variance, then you can alternatively do the **Welch two-sample t-test**
+
+### Welch two-sample $t$-test
+
+<img width="425" alt="image" src="https://github.com/user-attachments/assets/faf1d7b4-3f42-4085-96ae-5511b76cf4a5">
+
+But the Welch statistic is NOT a proper $t$-statistic since the denominator is not a scaled $\chi^2$ independent of the numerator. But the statistic stil has an approximately $t$-distribution where thedegrees of freedom isn't necessarily a whole number
+
+We use `var.equal = FALSE` to denote a Welch 2-sample t-test (which is default)
+
+```r
+t.test(smokers, non_smokers, alternative = "two.sided", var.equal = FALSE)
+```
+
+### Paired samples $t$-test
+
+This is sort of for "before" and "after" measurements e.g., samples of individuals before and after they smoked a cigarette to measure aggregation of blood platelets
+
+```r
+t.test(df$after, df$before, paired = TRUE)
+```
+
+or you can actually do a one-sample t-test on the differences (same thing!)
+
+```r
+t.test(df$difference)
+```
+
+<img width="433" alt="image" src="https://github.com/user-attachments/assets/11146ca2-9bbc-4976-93a3-326fe3c00789">
+
+
