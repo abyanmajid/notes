@@ -1,4 +1,4 @@
-<img width="433" alt="image" src="https://github.com/user-attachments/assets/5dd81e55-1837-4f9c-8f8e-d3b43a892b19"><img width="433" alt="image" src="https://github.com/user-attachments/assets/5832fa41-dd7d-42b5-a3a8-56ab715e23c5"># Week 4 PREREC-1 Testing means
+# Week 4 PREREC-1 Testing means
 
 Some basic probability facts about samples from _normal populations_:
 
@@ -78,5 +78,3 @@ t.test(df$difference)
 ```
 
 <img width="433" alt="image" src="https://github.com/user-attachments/assets/11146ca2-9bbc-4976-93a3-326fe3c00789">
-
-
