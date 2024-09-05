@@ -25,7 +25,24 @@ _Redundancy_ is the root of several problems associated with relational schemas:
 
 <img width="388" alt="image" src="https://github.com/user-attachments/assets/99daeaa2-0599-4ce8-b9c1-dca6bebac48b">
 
+Insertion Anomaly:
+- If another company buys a stake into an existing mine, we have to
+re-enter the ‘mine/state’ information, also 
+“commodity/abbrv/capacity”, causing duplication.
+– What if we want to insert a mine which has no owner so far? 
+We either cannot do it at all (PK!) or we get many NULL values.
+• Deletion Anomaly: 
+– If we delete all Uranium mines, we loose the information that ‘U’ is 
+the chemical identifier for the commodity ‘Uranium’!
+– Or if composite PK, we cannot delete the last company for a mine!
+• Update Anomaly: 
+– For changing, e.g., the homepage of a company, we have to update 
+multiple tuples, ., or risk introducing inconsistency
+Why do these anomalies exist here? 
+Because there are multiple themes (entity types) placed into one 
+relation. This results in duplication and unnecessary dependencies
 
+### Anomalies Example:
 
 
 
