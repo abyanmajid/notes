@@ -223,7 +223,63 @@ Views can sometimes be updated, under certain limitations:
 
 - `UPDATE` on the view can be performed - the system will change the underlying base table(s) to produce the requested change to the view
 
--
+
+### Issues with Updating Views
+
+**Projected out attributes**
+
+```sql
+INSERT INTO CsReg (StudId, CrsCode, Semester) VALUES (1111, 'CSE305', 'S2024')
+```
+
+**Q:** What value should be placed in attributes that have been projected out of the view e.g., Grade?
+
+**A:** `NULL` (assuming nullable), or `DEFAULT`
+
+**Newly inserted tuples will not be visible in the view**
+
+```sql
+INSERT INTO CsReg (StudId, CrsCode, Semester)
+VALUES (1111, 'ECO105', 'S2020')
+```
+
+**SOLUTION:** Create view `WITH CHECK OPTION` ensures that the new rows satisfy the view-defining condition; other changes are rejected
+
+**There's no unique way to change the base table(s) that results in the desired modification of the view**
+
+```sql
+CREATE VIEW ProfDept (PrName, DeName) AS
+SELECT P.Name, D.Name
+FROM Professor P, Department D
+WHERE P.DeptId = D.DeptId
+```
+
+### Integrity Constraint (IC)
+
+Condition that MUST be true for every instance of a database. A **_legal_** instance of a relation is one that satisfies all specified ICs.
+
+- ICs are **SPECIFIED** in the database schema.
+- ICs are **CHECKED** when the database is modified
+- Possible **REACTIONS** if an IC is violated: Undoing of the modification, execution of "maintenance" operations to make db legal again, etc.
+
+### Domain Constraints
+
+The most elementary form of an integrity constraint is **DOMAIN CONSTRAINT**, which includes data types, check/input validations, nullability, etc.
+
+**User-Defined Domains:** PostgreSQL lets you create a new domain from existing data domains
+
+```sql
+CREATE DOMAIN domain-name sql-data-type
+```
+
+e.g., `CREATE DOMAIN Dollars NUMERIC(12, 2)`, you can further restrict it with the `CHECK` clause e.g., `CREATE DOMAIN Grade CHAR CHECK(VALUE IN (‘F’,’P’,’C’,’D’,’H’))`
+
+### Candidate key
+
+A set of fields is a candidate key for a relation if:
+
+1. **Uniqueness:** No 2 distinct tuples can have same values in all key attributes, and
+2. **Minimality:** This is not true for any subset of the key
 
 
 
