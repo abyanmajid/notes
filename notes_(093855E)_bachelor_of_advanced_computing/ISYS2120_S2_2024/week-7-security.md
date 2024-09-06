@@ -91,6 +91,143 @@ Most DBMSs support variation of command `GRANT privilege(column) ON table`
 - e.g., `GRANT SELECT (sid, name, phone) ON Student TO Fred`
 - e.g., `GRANT UPDATE (phone) ON Student TO Jane`
 
+### Revoking privileges
+
+When a privilege is revoked from user `X`, it is also revoked FROM ALL USERS who got it SOLELY from user `X`. But if a user has this privileges via several routes, it's still there until all granters have revoked it
+
+```
+REVOKE privilege_list ON table FROM user_list
+```
+
+### Authorization Mode `REFERENCES`
+
+Foreign key constraint could be exploited to:
+
+- **prevent some kinds of modification** e.g., prevent deletion of rows in some other table
+
+```sql
+CREATE TABLE DontDismissMe (
+  id INTEGER,
+  FOREGIN KEY (id) REFERENCES Student ON DELETE NO ACTION
+)
+```
+
+- **reveal info** - successful insertion into `DontDismissMe` reveals that a row with particular value exists in another table `Student`
+
+```sql
+INSERT INTO DontDismissMe VALUES (11111111);
+```
+
+The existence of `REFERENCES` privilege also allows to limit these powers to certain users
+
+- Most users (other than table owner) wont have REFERENCES privilege so can't use these tricks
+
+```sql
+GRANT REFERENCSE ON Student TO StuServices
+```
+
+### Role-based Authorization
+
+In SQL-92, privileges are actually assigned to authorisation IDs, which can denote a single user or a group of users.
+
+In SQL-1999, **privileges are assigned to roles.**
+
+- Roles can be granted to users and other roles
+- Roles are much more flexible and less error-prone especially on large schemas.
+
+Use role-based authorization whenever possible!
+
+Example:
+
+```sql
+CREATE ROLE manager
+GRANT select,insert ON student TO manager
+GRANT manager TO shari
+-- now shari can select and insert on student
+GRANT manager TO keiko
+-- now keiko can select and insert on student
+REVOKE manager FROM shari
+-- now shari does not have manager privileges
+```
+
+### User Identity (Authentication)
+
+A DBA has a lot of privileges, over objects of all the ordinary users. So, DBA identity must be carefully protected esp. NEVER LEAVE DEFAULT PASSWORD (as provided when system init)
+
+### Content-based access control
+
+`GRANT` works uniformly on a whole table or column. Policy often calls for access to be limite dto certain rows only, in a table
+
+The decision about whether a row should be accessed by someone may depend on the contents of some fields in the row.
+
+- e.g., John should be able to modify saliries, but only for tuples with Dept = "Accounts"
+- e.g. Each student should be able to see their own grades, but not grades of other students
+
+### Summary access
+
+Policy may call for certain users to be able to see aggregates and summaries, without seeing all the separate data items that combine for that summary
+
+- e.g., Jane is allowed to know the level of avg. salary in each faculity, without knowing salaries of individual staff
+
+SQL DBMS achieves this by lettins us define a VIEW wiwth only the sumaries, and then GRANT access to that VIEW
+
+### Relational views
+
+A **view** is a _virtual_ relation, but we store a _definition_, rather than a set of tuples.
+
+This provides a mechanism to release access to certain data, without allowing access to all of a genuine table
+
+```sql
+CREATE VIEW name AS <query expression>
+```
+
+where `<query expression>` is any legal query expression (can even combine multiple relations)
+
+EXAMPLES:
+
+- A view on students showing their age
+
+```sql
+CREATE VIEW ageStudents AS
+SELECT sid, name, 
+(extract(year from current_date) -
+extract(year from birthdate)) AS age
+FROM Student
+```
+
+- A view on the female students enrolled in 2024 SEM 2
+
+```sql
+CREATE VIEW FemaleStudents (name, grade)
+AS SELECT S.name, E.grade
+FROM Student S, Enrolled E
+WHERE S.sid = E.sid AND
+S.gender = ‘F’ AND E.semester = ‘2024sem2’
+```
+
+### View Benefits: Security
+
+_Need-to-know:_ Users not granted access to base tables. Instead, they are granted access to the view of the database appropriate to their needs.
+
+Views allow owner to provide others with `SELECT` access to a subset of columns and a subset of rows, or to provide access to summaries without the full data.
+
+### Example of `GRANT` with `VIEW`
+
+<img width="380" alt="image" src="https://github.com/user-attachments/assets/fbf788d8-0b54-40bf-812a-90029a4e9682">
+
+<img width="376" alt="image" src="https://github.com/user-attachments/assets/fb24a516-c196-4db3-9903-4f0284203f90">
+
+### Updating Views
+
+Views can sometimes be updated, under certain limitations:
+
+- `UPDATE` on the view can be performed - the system will change the underlying base table(s) to produce the requested change to the view
+
+-
+
+
+
+
 
 
 
