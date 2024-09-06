@@ -43,3 +43,54 @@ Capabilities of a DBMS that can be useful in security mechanisms, but can also b
 
 ### Database Access Control
 
+- **Access control (for authorization)**: A mechanism provided by DBMS for controlling which users perform various operations on various parts of the database. It's called **"discretionary" access control**, because the decision about what is permitted or not, is set by appropriate people as the system operates. (Unlike **mandatory access control** where the decisions are built in to the system and unchangable)
+
+- Creator of a table in SQL automatically gets all privileges on it.
+
+### The `GRANT` Command
+
+The generic syntax looks like:
+
+```
+GRANT <privilegelist> ON <tablelist> TO <userlist> [WITH GRANT OPTION]
+```
+
+where `<privilegelist>` could comprise of any of:
+
+- `SELECT`: (allows to read all columns of any tables in `<tablelist>`, including columns added later via `ALTER TABLE`
+- `INSERT`: allows to insert extra tuples in any of the listed tables
+- `UPDATE`: allows to modify the values in any tuples of the tables
+- `REFERENCES`: can define foreign keys (in other tables) that refer to this table
+
+If a user has a privilege with the `GRANT OPTION`, they can themselves pass privilege on to other users by executing a `GRANT` command.
+
+Anyone who gets privileges from a command `WITH GRANT OPTION` has the capacity to pass those privileges on to others.
+
+`WITH GRANT OPTION` is very powerful and it should be given rarely, and only to the trusted.
+
+Only owner of a table (or superuser) can execute `ALTER` and `DROP`. Owners can actually execute an external pipeline 
+
+## Access Control in SQL (Examples)
+
+Allow Jason to select any tuples in the `Enrolled` table
+
+`GRANT SELECT ON Enrolled TO jason`
+
+Allow `jason` to modify any tuples in the `Enrolled` table
+
+`GRANT UPDATE ON Enrolled TO jason`
+
+Allow `jason` to delete tuples that are in the `Student` table and also allow him to authorize others to do so by executing `GRANT`
+
+`GRANT DELETE ON Student TO jason WITH GRANT OPTION`
+
+It is common for security policy to want different access rights on different columns in a single table e.g., Fred can read `Student` sid, name, phone, but not disability-status, nationality, or others.
+
+Most DBMSs support variation of command `GRANT privilege(column) ON table`
+
+- e.g., `GRANT SELECT (sid, name, phone) ON Student TO Fred`
+- e.g., `GRANT UPDATE (phone) ON Student TO Jane`
+
+
+
+
