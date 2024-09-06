@@ -281,6 +281,105 @@ A set of fields is a candidate key for a relation if:
 1. **Uniqueness:** No 2 distinct tuples can have same values in all key attributes, and
 2. **Minimality:** This is not true for any subset of the key
 
+### Assertions
+
+An **assertion** is a predicate expressing a condition that we wish the database always to satisfy.
+
+```sql
+CREATE ASSERTION <assertion-name> CHECK (<condition>)
+```
+
+Assertions are schema objects (like table or views), so when it's made, the system tests it for validity, and tests it again on every update that may violate it (this testing can introduce significant amount of overhead)
+
+### Transaction
+
+A **transaction** is a sequence of database actions, that collectively accomplish one real-world change
+
+### Deferring Constraint Checking
+
+Any DBMS-known constraint - domain, key, foreign-key, check/assertion - may be declared:
+
+- `NOT DEFERRABLE`: This is the default, it means that every time a database modification occurs, the constraint is checked immediately afterwards
+
+- `DEFERRABLE`: Wait until a transaction (with several operations) is complete before checking the constraint
+
+EXAMPLE:
+
+```sql
+CREATE TABLE UnitOfStudy
+(
+  uos_code VARCHAR(8),
+  title VARCHAR(220),
+  lecturer INTEGER,
+  credit_points INTEGER,
+  CONSTRAINT UnitOfStudy_PK PRIMARY KEY (uos_code),
+  CONSTRAINT UnitOfStudy_FK FOREIGN KEY (lecturer) 
+  REFERENCES Lecturer DEFERABBLE INITIALLY DEFERRED
+);
+```
+
+### Triggers
+
+A **trigger** is a statement that is executed automatically when specified actions occur to the DBMS
+
+A trigger declaration conceptually consists of three parts: **ON** event **WHEN** condition **THEN** action
+
+<img width="356" alt="image" src="https://github.com/user-attachments/assets/16e5c073-84f2-491e-84b5-711b0cbb5a0f">
+
+### Triggers for Security
+
+- **Monitoring** e.g., react to changes by sending alerts or storing info elsewhere in the db for later audit
+- **Constraint maintenace** e.g., triggers can be used to maintain a variety of semantic constraints, more sophisticated than simple domain, foreign key, etc
+
+### Other Uses of Triggers
+
+**Business rules**
+
+- Some dynamic business rules can be encoded as triggers
+
+**Monitoring**
+
+- Produce logs of activity, which can be used for later performance tuning, etc
+
+###  Trigger Events
+
+Triggering event can be `INSERT`, `DELETE`, or `UPDATE`
+
+Triggers on update can be restricted so only occur when specific columns are changed
+
+```
+CREATE TRIGGER overdraft-trigger
+AFTER UPDATE OF balance
+ON account
+```
+
+A trigger is declared as `BEFORE` (often for constraint enforcing) or `AFTER` (often for monitoring by keeping audit info) the event.
+
+### Trigger Granularity
+
+- _Row-level granularity:_ Change of a single row is an event (a single UPDATE statement might result in multiple events, or none)
+
+- _Statement-level granularity:_ A statement execution is an event (a single `UPDATE` statement that changes multiple rows is one event)
+
+<img width="369" alt="image" src="https://github.com/user-attachments/assets/f8e1cc0c-004f-4862-bd08-3fde73718592">
+
+<img width="383" alt="image" src="https://github.com/user-attachments/assets/5fb8ad66-d4ba-4064-9247-6dd802b38683">
+
+<img width="386" alt="image" src="https://github.com/user-attachments/assets/a0e9d27f-7e59-4ed6-b1e4-1f5393a4f06c">
+
+### When NOT to use Triggers
+
+- No need to use triggers for maintaining summary data. Databases provide built-in materialized view facilities for this.
+- No need to replicate databases by recording changes to special relations. Databases provide buit-in support for replication.
+
+
+
+
+
+
+
+
+
 
 
 
